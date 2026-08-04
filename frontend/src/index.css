@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 5%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 263.4 90% 50.4%; /* Purple primary */
+    --primary-foreground: 210 20% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 263.4 90% 60%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 18%;
+    --input: 240 3.7% 18%;
+    --ring: 263.4 90% 50.4%;
+    --radius: 0.75rem;
+  }
+}
+
+/* Custom premium scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(22, 23, 29, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.6);
+}
+
+body {
+  background: radial-gradient(circle at top left, #121216 0%, #07070a 100%);
+  color: #f3f4f6;
+  min-height: 100vh;
+  font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  border: none;
+  display: block;
+  text-align: left;
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(15, 15, 20, 0.6);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(20, 20, 28, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.15);
+  transform: translateY(-2px);
+}
+
+.glass-input {
+  background: rgba(10, 10, 15, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-input:focus {
+  border-color: rgba(139, 92, 246, 0.6);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+/* Glowing text and buttons */
+.glow-text {
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.4);
+}
+
+.glow-btn {
+  box-shadow: 0 4px 15px -3px rgba(139, 92, 246, 0.4);
+  transition: all 0.2s ease;
+}
+
+.glow-btn:hover {
+  box-shadow: 0 8px 25px -3px rgba(139, 92, 246, 0.6);
+  transform: translateY(-1px);
+}
+
+/* Micro-animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Print CSS system */
+@media print {
+  /* Hide the rest of the application */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 10px !important;
+  }
+  
+  body * {
+    visibility: hidden;
+  }
+
+  /* Only display the printable receipt container */
+  #print-area, #print-area * {
+    visibility: visible;
+  }
+
+  #print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0 !important;
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: none !important;
+    font-size: 10px !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Shrink print paddings and margins to fit exactly one A4 page */
+  #print-area h1 {
+    font-size: 14px !important;
+    margin-bottom: 2px !important;
+  }
+  #print-area p, #print-area div {
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+  }
+  #print-area table {
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+  }
+  #print-area th, #print-area td {
+    padding: 4px 6px !important;
+    font-size: 9px !important;
+  }
+  #print-area .mt-12 {
+    margin-top: 12px !important;
+  }
+  #print-area .mb-4 {
+    margin-bottom: 6px !important;
+  }
+  #print-area .p-3 {
+    padding: 6px !important;
+  }
+  #print-area .p-8 {
+    padding: 5px !important;
+  }
+  #print-area .pb-2 {
+    padding-bottom: 4px !important;
+  }
+
+  /* Force background colors to print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Compact margins on printed page */
+  @page {
+    size: A4 portrait;
+    margin: 0.8cm;
+  }
+
+  /* Prevent page breaks inside container */
+  html, body, #print-area {
+    page-break-after: avoid !important;
+    page-break-before: avoid !important;
+    break-after: avoid !important;
+    break-before: avoid !important;
+  }
+}
+
+/* Hide number input spinner arrows globally on screen */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Invert calendar picker indicator for high-contrast dark mode visibility */
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}

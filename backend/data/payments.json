@@ -1,0 +1,54 @@
+[
+  {
+    "_id": "869158df-6663-45ad-98de-601ccd5456a3",
+    "studentId": "bb9cbd20-ad71-406b-8fc9-226cd7d70919",
+    "amount": 30000,
+    "date": "2026-06-19T08:52:35.709Z",
+    "mode": "Online",
+    "referenceNo": "TXN981023719",
+    "collectedBy": "Accounts Office Staff",
+    "receiptNo": "REC-000001",
+    "remarks": "First installment paid online.",
+    "createdAt": "2026-06-24T08:52:35.709Z",
+    "updatedAt": "2026-06-24T08:52:35.709Z"
+  },
+  {
+    "_id": "9dacbc69-08ac-4f4c-a3af-c1084d3b47c5",
+    "studentId": "982e68cd-02d2-4e03-8315-28e47ab49030",
+    "amount": 28500,
+    "date": "2026-06-22T08:52:35.887Z",
+    "mode": "Cash",
+    "referenceNo": "CASH-3891",
+    "collectedBy": "Accounts Office Staff",
+    "receiptNo": "REC-000002",
+    "remarks": "Full fee paid by cash.",
+    "createdAt": "2026-06-24T08:52:35.889Z",
+    "updatedAt": "2026-06-24T08:52:35.889Z"
+  },
+  {
+    "_id": "b1e4e1c8-28b8-4ef4-a8e5-91c8cd564f16",
+    "studentId": "bb9cbd20-ad71-406b-8fc9-226cd7d70919",
+    "amount": 28240,
+    "date": "2026-06-24T09:02:12.134Z",
+    "mode": "Online",
+    "referenceNo": "N/A",
+    "collectedBy": "Accounts Office Staff",
+    "receiptNo": "REC-000003",
+    "remarks": "",
+    "createdAt": "2026-06-24T09:02:12.135Z",
+    "updatedAt": "2026-06-24T09:02:12.135Z"
+  },
+  {
+    "_id": "c8c39b33-6821-4330-ae6c-7d0694cfe316",
+    "studentId": "0c32e6b3-8fe7-4f6e-8f39-40fc26c440d9",
+    "amount": 22000,
+    "date": "2026-06-24T10:04:20.004Z",
+    "mode": "Cash",
+    "referenceNo": "N/A",
+    "collectedBy": "Accounts Office Staff",
+    "receiptNo": "REC-000004",
+    "remarks": "partial payment",
+    "createdAt": "2026-06-24T10:04:20.004Z",
+    "updatedAt": "2026-06-24T10:04:20.004Z"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "_id": "e3a8c864-1c7c-497e-b13a-fa2c0c2e2290",
+    "action": "SYSTEM_STARTUP",
+    "details": "System backend initialized and default mock databases seeded.",
+    "performedBy": "System Seeder",
+    "timestamp": "2026-06-24T08:52:35.895Z",
+    "createdAt": "2026-06-24T08:52:35.895Z",
+    "updatedAt": "2026-06-24T08:52:35.895Z"
+  },
+  {
+    "_id": "ce205791-6bfd-4257-819b-a0d1a73fb578",
+    "action": "COLLECT_FEE",
+    "details": "Collected ₹28240 via Online from student Rahul Sharma (1RV22CS001). Receipt No: REC-000003.",
+    "performedBy": "Accounts Office Staff",
+    "timestamp": "2026-06-24T09:02:12.138Z",
+    "createdAt": "2026-06-24T09:02:12.139Z",
+    "updatedAt": "2026-06-24T09:02:12.139Z"
+  },
+  {
+    "_id": "c57c6743-633e-4b62-8e7c-6e7c11ef842d",
+    "action": "UPDATE_STUDENT",
+    "details": "Updated details for student Rahul Sharma (1RV22CS001).",
+    "performedBy": "System Admin",
+    "timestamp": "2026-06-24T09:28:05.706Z",
+    "createdAt": "2026-06-24T09:28:05.708Z",
+    "updatedAt": "2026-06-24T09:28:05.708Z"
+  },
+  {
+    "_id": "8f7f0684-0e07-4113-a526-d63078989b70",
+    "action": "UPDATE_DEADLINE",
+    "details": "Updated deadline for 2025-26. New due date: 2026-07-24, fine: ₹50/day.",
+    "performedBy": "System Admin",
+    "timestamp": "2026-06-24T09:29:29.013Z",
+    "createdAt": "2026-06-24T09:29:29.014Z",
+    "updatedAt": "2026-06-24T09:29:29.014Z"
+  },
+  {
+    "_id": "ced520f6-9505-4279-9a74-302f3385e064",
+    "action": "COLLECT_FEE",
+    "details": "Collected ₹22000 via Cash from student Ananya Murthy (1RV22EC045). Receipt No: REC-000004.",
+    "performedBy": "Accounts Office Staff",
+    "timestamp": "2026-06-24T10:04:20.008Z",
+    "createdAt": "2026-06-24T10:04:20.010Z",
+    "updatedAt": "2026-06-24T10:04:20.010Z"
+  },
+  {
+    "_id": "338faccd-ab89-449a-bd07-5e820d464b0a",
+    "action": "UPDATE_FEE_STRUCTURE",
+    "details": "Updated fee structure for KCET (2025-26). New total: ₹58240.",
+    "performedBy": "System Admin",
+    "timestamp": "2026-06-24T10:06:49.177Z",
+    "createdAt": "2026-06-24T10:06:49.178Z",
+    "updatedAt": "2026-06-24T10:06:49.178Z"
+  },
+  {
+    "_id": "5e7488b6-6c7d-4f8b-aeea-73b7ff72d759",
+    "action": "UPDATE_FEE_STRUCTURE",
+    "details": "Updated fee structure for KCET (2025-26). New total: ₹62740.",
+    "performedBy": "System Admin",
+    "timestamp": "2026-06-24T10:06:59.447Z",
+    "createdAt": "2026-06-24T10:06:59.449Z",
+    "updatedAt": "2026-06-24T10:06:59.449Z"
+  }
+]

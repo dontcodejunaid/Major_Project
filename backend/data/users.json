@@ -1,0 +1,52 @@
+[
+  {
+    "_id": "d41dc35a-6924-45cf-a8aa-516a8f72e55b",
+    "name": "System Admin",
+    "email": "admin@college.edu",
+    "role": "Admin",
+    "passwordHash": "$2a$10$4ZtEGZbwT4UOor/ed6EFOeUNlAIAkeuk7wHX.T1PbKooAd7l0AH3G",
+    "studentId": null,
+    "createdAt": "2026-06-24T08:52:35.621Z",
+    "updatedAt": "2026-06-24T08:52:35.623Z"
+  },
+  {
+    "_id": "f8a4b352-f845-44a6-880f-491103a65ead",
+    "name": "Accounts Office Staff",
+    "email": "staff@college.edu",
+    "role": "Staff",
+    "passwordHash": "$2a$10$4ZtEGZbwT4UOor/ed6EFOe.7Oj2177yRDVwfJrzdpAhw7D00SZNgK",
+    "studentId": null,
+    "createdAt": "2026-06-24T08:52:35.625Z",
+    "updatedAt": "2026-06-24T08:52:35.625Z"
+  },
+  {
+    "_id": "57054bdb-4452-49d6-9827-17309cef6590",
+    "name": "Rahul Sharma",
+    "email": "rahul@student.edu",
+    "role": "Student",
+    "passwordHash": "$2a$10$4ZtEGZbwT4UOor/ed6EFOeKc3a7RTCPPyeNuEa/q5/5ofuWZxLtOe",
+    "studentId": "bb9cbd20-ad71-406b-8fc9-226cd7d70919",
+    "createdAt": "2026-06-24T08:52:35.708Z",
+    "updatedAt": "2026-06-24T09:28:05.705Z"
+  },
+  {
+    "_id": "66efcf90-e675-46a9-942f-59bb2511ae59",
+    "name": "Ananya Murthy",
+    "email": "ananya@student.edu",
+    "role": "Student",
+    "passwordHash": "$2a$10$4ZtEGZbwT4UOor/ed6EFOeAWEt.b8jmGr03hJMRMOCIv5LnAb/dD2",
+    "studentId": "0c32e6b3-8fe7-4f6e-8f39-40fc26c440d9",
+    "createdAt": "2026-06-24T08:52:35.790Z",
+    "updatedAt": "2026-06-24T08:52:35.790Z"
+  },
+  {
+    "_id": "e178f7e4-ab21-40ea-b639-8c717f0e1203",
+    "name": "Sameer Khan",
+    "email": "sameer@student.edu",
+    "role": "Student",
+    "passwordHash": "$2a$10$4ZtEGZbwT4UOor/ed6EFOeQI5Dc0S7NICoRReUYbSsT2aSGTaDg8C",
+    "studentId": "982e68cd-02d2-4e03-8315-28e47ab49030",
+    "createdAt": "2026-06-24T08:52:35.886Z",
+    "updatedAt": "2026-06-24T08:52:35.886Z"
+  }
+]

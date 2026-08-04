@@ -1,0 +1,128 @@
+[
+  {
+    "_id": "dd33c83a-9f68-444f-9f7c-1126c8a5d9ac",
+    "academicYear": "2025-26",
+    "quota": "KCET",
+    "components": [
+      {
+        "name": "Tuition Fee",
+        "amount": 48000
+      },
+      {
+        "name": "University Fee",
+        "amount": 4000
+      },
+      {
+        "name": "Sports Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Library Fee",
+        "amount": 1240
+      },
+      {
+        "name": "Lab Fee",
+        "amount": 2000
+      },
+      {
+        "name": "Development Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Exam Fee",
+        "amount": 5000
+      },
+      {
+        "name": "Miscellaneous",
+        "amount": 500
+      }
+    ],
+    "totalAmount": 62740,
+    "createdAt": "2026-06-24T08:52:35.625Z",
+    "updatedAt": "2026-06-24T10:06:59.446Z"
+  },
+  {
+    "_id": "9134d659-4bd1-4fb2-a767-cce093d304de",
+    "academicYear": "2025-26",
+    "quota": "Management",
+    "components": [
+      {
+        "name": "Tuition Fee",
+        "amount": 180000
+      },
+      {
+        "name": "University Fee",
+        "amount": 15000
+      },
+      {
+        "name": "Sports Fee",
+        "amount": 5000
+      },
+      {
+        "name": "Library Fee",
+        "amount": 4000
+      },
+      {
+        "name": "Lab Fee",
+        "amount": 6000
+      },
+      {
+        "name": "Development Fee",
+        "amount": 8000
+      },
+      {
+        "name": "Exam Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Miscellaneous",
+        "amount": 1000
+      }
+    ],
+    "totalAmount": 220000,
+    "createdAt": "2026-06-24T08:52:35.626Z",
+    "updatedAt": "2026-06-24T08:52:35.626Z"
+  },
+  {
+    "_id": "2ead0c29-8142-4937-ae7d-8907c510545d",
+    "academicYear": "2025-26",
+    "quota": "SNQ",
+    "components": [
+      {
+        "name": "Tuition Fee",
+        "amount": 18000
+      },
+      {
+        "name": "University Fee",
+        "amount": 4000
+      },
+      {
+        "name": "Sports Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Library Fee",
+        "amount": 1500
+      },
+      {
+        "name": "Lab Fee",
+        "amount": 2000
+      },
+      {
+        "name": "Development Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Exam Fee",
+        "amount": 500
+      },
+      {
+        "name": "Miscellaneous",
+        "amount": 500
+      }
+    ],
+    "totalAmount": 28500,
+    "createdAt": "2026-06-24T08:52:35.628Z",
+    "updatedAt": "2026-06-24T08:52:35.628Z"
+  }
+]

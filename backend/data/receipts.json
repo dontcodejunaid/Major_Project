@@ -1,0 +1,82 @@
+[
+  {
+    "_id": "c4a72ae4-260b-4076-b929-915e6ab55c28",
+    "receiptNo": "REC-000001",
+    "studentId": "bb9cbd20-ad71-406b-8fc9-226cd7d70919",
+    "paymentId": "869158df-6663-45ad-98de-601ccd5456a3",
+    "type": "staff",
+    "generatedAt": "2026-06-24T08:52:35.709Z",
+    "createdAt": "2026-06-24T08:52:35.709Z",
+    "updatedAt": "2026-06-24T08:52:35.709Z"
+  },
+  {
+    "_id": "ac31590e-3f23-4e80-88df-d63cb26fc7d0",
+    "receiptNo": "REC-000001",
+    "studentId": "bb9cbd20-ad71-406b-8fc9-226cd7d70919",
+    "paymentId": "869158df-6663-45ad-98de-601ccd5456a3",
+    "type": "student",
+    "generatedAt": "2026-06-24T08:52:35.710Z",
+    "createdAt": "2026-06-24T08:52:35.710Z",
+    "updatedAt": "2026-06-24T08:52:35.710Z"
+  },
+  {
+    "_id": "90e198cd-2dd0-4abb-bc29-e945054dc930",
+    "receiptNo": "REC-000002",
+    "studentId": "982e68cd-02d2-4e03-8315-28e47ab49030",
+    "paymentId": "9dacbc69-08ac-4f4c-a3af-c1084d3b47c5",
+    "type": "staff",
+    "generatedAt": "2026-06-24T08:52:35.889Z",
+    "createdAt": "2026-06-24T08:52:35.890Z",
+    "updatedAt": "2026-06-24T08:52:35.890Z"
+  },
+  {
+    "_id": "9728f3a6-c3bb-475f-b9c4-172351e8b8e2",
+    "receiptNo": "REC-000002",
+    "studentId": "982e68cd-02d2-4e03-8315-28e47ab49030",
+    "paymentId": "9dacbc69-08ac-4f4c-a3af-c1084d3b47c5",
+    "type": "student",
+    "generatedAt": "2026-06-24T08:52:35.891Z",
+    "createdAt": "2026-06-24T08:52:35.894Z",
+    "updatedAt": "2026-06-24T08:52:35.894Z"
+  },
+  {
+    "_id": "c2e18dca-4955-44c9-8e57-e48c9b179d0d",
+    "receiptNo": "REC-000003",
+    "studentId": "bb9cbd20-ad71-406b-8fc9-226cd7d70919",
+    "paymentId": "b1e4e1c8-28b8-4ef4-a8e5-91c8cd564f16",
+    "type": "staff",
+    "generatedAt": "2026-06-24T09:02:12.136Z",
+    "createdAt": "2026-06-24T09:02:12.136Z",
+    "updatedAt": "2026-06-24T09:02:12.136Z"
+  },
+  {
+    "_id": "ca7024b6-6378-4d7d-abe6-c883b5e4a48f",
+    "receiptNo": "REC-000003",
+    "studentId": "bb9cbd20-ad71-406b-8fc9-226cd7d70919",
+    "paymentId": "b1e4e1c8-28b8-4ef4-a8e5-91c8cd564f16",
+    "type": "student",
+    "generatedAt": "2026-06-24T09:02:12.137Z",
+    "createdAt": "2026-06-24T09:02:12.138Z",
+    "updatedAt": "2026-06-24T09:02:12.138Z"
+  },
+  {
+    "_id": "8fb33ec4-4232-49d2-846c-b2e09450b5ca",
+    "receiptNo": "REC-000004",
+    "studentId": "0c32e6b3-8fe7-4f6e-8f39-40fc26c440d9",
+    "paymentId": "c8c39b33-6821-4330-ae6c-7d0694cfe316",
+    "type": "staff",
+    "generatedAt": "2026-06-24T10:04:20.005Z",
+    "createdAt": "2026-06-24T10:04:20.006Z",
+    "updatedAt": "2026-06-24T10:04:20.006Z"
+  },
+  {
+    "_id": "3f0db19d-26f6-4b40-b4fc-81d59d1cdb89",
+    "receiptNo": "REC-000004",
+    "studentId": "0c32e6b3-8fe7-4f6e-8f39-40fc26c440d9",
+    "paymentId": "c8c39b33-6821-4330-ae6c-7d0694cfe316",
+    "type": "student",
+    "generatedAt": "2026-06-24T10:04:20.006Z",
+    "createdAt": "2026-06-24T10:04:20.007Z",
+    "updatedAt": "2026-06-24T10:04:20.007Z"
+  }
+]
