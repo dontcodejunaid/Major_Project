@@ -181,28 +181,28 @@ const CustomDatePicker = ({ value, onChange, placeholder = "Select date...", cla
 
       {/* Calendar Dropdown Modal */}
       {isOpen && (
-        <div className="absolute right-0 mt-2 z-50 w-72 rounded-2xl glass-panel p-3.5 shadow-2xl border border-violet-500/30 animate-fade-in no-print backdrop-blur-xl">
+        <div className="custom-datepicker-dropdown absolute right-0 mt-2 z-50 w-72 rounded-2xl bg-[#181924] p-3.5 shadow-2xl border border-violet-500/40 animate-fade-in no-print text-white">
           {/* Calendar Header */}
           <div className="flex items-center justify-between pb-2.5 mb-2.5 border-b border-white/10">
             <button
               onClick={handlePrevMonth}
               className="p-1.5 hover:bg-white/10 rounded-lg text-gray-300 hover:text-white transition cursor-pointer"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-4 h-4 text-violet-400" />
             </button>
-            <div className="text-xs font-bold tracking-wide">
+            <div className="text-xs font-bold tracking-wide text-white font-sans">
               {MONTH_NAMES[currentMonth]} {currentYear}
             </div>
             <button
               onClick={handleNextMonth}
               className="p-1.5 hover:bg-white/10 rounded-lg text-gray-300 hover:text-white transition cursor-pointer"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-4 h-4 text-violet-400" />
             </button>
           </div>
 
           {/* Weekday Headers */}
-          <div className="grid grid-cols-7 gap-1 text-center mb-1">
+          <div className="grid grid-cols-7 gap-1 text-center mb-1 font-mono">
             {DAY_NAMES.map((d) => (
               <span key={d} className="text-[10px] font-bold text-violet-400 uppercase py-1">
                 {d}
@@ -217,7 +217,7 @@ const CustomDatePicker = ({ value, onChange, placeholder = "Select date...", cla
                 return (
                   <span
                     key={cell.key}
-                    className="text-[11px] py-1.5 text-gray-600 cursor-not-allowed select-none opacity-40"
+                    className="text-[11px] py-1.5 text-gray-600 font-sans cursor-not-allowed select-none opacity-40"
                   >
                     {cell.day}
                   </span>
@@ -231,12 +231,12 @@ const CustomDatePicker = ({ value, onChange, placeholder = "Select date...", cla
                 <button
                   key={cell.key}
                   onClick={() => handleSelectDay(cell.day)}
-                  className={`text-[11px] font-medium py-1.5 rounded-lg transition duration-150 cursor-pointer relative ${
+                  className={`text-[11px] font-semibold py-1.5 rounded-lg transition duration-150 cursor-pointer relative font-sans ${
                     selected
-                      ? 'bg-violet-600 text-white font-bold shadow-md shadow-violet-600/40 scale-105'
+                      ? 'bg-violet-600 text-white font-bold shadow-md shadow-violet-600/50 scale-105'
                       : today
-                      ? 'border border-violet-500/60 text-violet-400 font-bold bg-violet-500/10 hover:bg-violet-600/30'
-                      : 'hover:bg-violet-500/15 hover:text-violet-400'
+                      ? 'border border-violet-500/80 text-violet-300 font-bold bg-violet-500/20 hover:bg-violet-600/30'
+                      : 'text-gray-100 hover:bg-violet-500/20 hover:text-white'
                   }`}
                 >
                   {cell.day}
@@ -254,7 +254,7 @@ const CustomDatePicker = ({ value, onChange, placeholder = "Select date...", cla
               onClick={handleSelectToday}
               className="text-violet-400 hover:text-violet-300 transition cursor-pointer flex items-center gap-1"
             >
-              <Check className="w-3 h-3" /> Today
+              <Check className="w-3.5 h-3.5" /> Today
             </button>
 
             {value && (

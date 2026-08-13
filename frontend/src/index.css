@@ -213,6 +213,42 @@ body.light-theme .glow-text {
   color: #0f172a !important;
 }
 
+/* Custom DatePicker Opaque Styling */
+.custom-datepicker-dropdown {
+  background-color: #161722 !important;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.85) !important;
+}
+
+body.light-theme .custom-datepicker-dropdown {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 20px 30px -5px rgba(0, 0, 0, 0.15) !important;
+}
+
+body.light-theme .custom-datepicker-dropdown .text-white {
+  color: #0f172a !important;
+}
+
+body.light-theme .custom-datepicker-dropdown .text-gray-100,
+body.light-theme .custom-datepicker-dropdown .text-gray-200,
+body.light-theme .custom-datepicker-dropdown .text-gray-300 {
+  color: #334155 !important;
+}
+
+body.light-theme .custom-datepicker-dropdown .text-gray-600 {
+  color: #94a3b8 !important;
+}
+
+body.light-theme .custom-datepicker-dropdown button:hover:not(.bg-violet-600) {
+  background-color: #f1f5f9 !important;
+  color: #6d28d9 !important;
+}
+
+body.light-theme .custom-datepicker-dropdown .border-white\/10 {
+  border-color: #e2e8f0 !important;
+}
+
 body.light-theme ::-webkit-calendar-picker-indicator {
   filter: invert(0);
 }
