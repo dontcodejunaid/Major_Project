@@ -7,6 +7,7 @@ import Payments from './pages/Payments';
 import Deadlines from './pages/Deadlines';
 import Reports from './pages/Reports';
 import UsersPage from './pages/Users';
+import SkyToggle from './components/SkyToggle';
 
 import { 
   GraduationCap, LayoutDashboard, Users, Tag, Calendar, 
@@ -220,23 +221,10 @@ const App = () => {
             </span>
           </div>
           <div className="flex items-center gap-4 text-xs font-bold text-gray-400">
-            <button
-              onClick={toggleTheme}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-300 dark:border-white/10 bg-white/5 hover:bg-white/10 text-gray-700 dark:text-gray-300 transition cursor-pointer"
-              title="Toggle Light / Dark theme mode"
-            >
-              {theme === 'light' ? (
-                <>
-                  <Sun className="w-3.5 h-3.5 text-amber-500" />
-                  <span>Light Mode</span>
-                </>
-              ) : (
-                <>
-                  <Moon className="w-3.5 h-3.5 text-violet-400" />
-                  <span>Dark Mode</span>
-                </>
-              )}
-            </button>
+            <SkyToggle
+              checked={theme === 'dark'}
+              onChange={(isNight) => setTheme(isNight ? 'dark' : 'light')}
+            />
             <span>Academic Term: <span className="text-white">2026-2027 Batch</span></span>
           </div>
         </header>
