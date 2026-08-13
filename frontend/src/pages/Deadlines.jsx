@@ -3,6 +3,7 @@ import { api } from '../utils/api';
 import { 
   Calendar, Clock, IndianRupee, Save, Check, X, RefreshCw, AlertCircle
 } from 'lucide-react';
+import CustomDatePicker from '../components/CustomDatePicker';
 
 const Deadlines = ({ user }) => {
   const [deadlines, setDeadlines] = useState([]);
@@ -115,17 +116,12 @@ const Deadlines = ({ user }) => {
                   <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">
                     Payment Due Date
                   </label>
-                  <div className="relative">
-                    <Calendar className="absolute left-3.5 top-3 w-4 h-4 text-gray-500" />
-                    <input
-                      type="date"
-                      required
-                      value={dueDate}
-                      onChange={(e) => setDueDate(e.target.value)}
-                      onClick={(e) => e.target.showPicker && e.target.showPicker()}
-                      className="w-full pl-9 pr-4 py-2.5 rounded-xl glass-input text-xs"
-                    />
-                  </div>
+                  <CustomDatePicker
+                    value={dueDate}
+                    onChange={setDueDate}
+                    placeholder="Select due date..."
+                    className="w-full"
+                  />
                 </div>
 
                 <div>

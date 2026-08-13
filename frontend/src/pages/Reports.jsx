@@ -4,6 +4,7 @@ import {
   ShieldCheck, Search, Filter, RefreshCw, FileSpreadsheet, 
   Calendar, Check, User, Clock, AlertCircle
 } from 'lucide-react';
+import CustomDatePicker from '../components/CustomDatePicker';
 
 const Reports = ({ user }) => {
   const [logs, setLogs] = useState([]);
@@ -112,13 +113,10 @@ const Reports = ({ user }) => {
           </select>
         </div>
         <div>
-          <input
-            type="date"
+          <CustomDatePicker
             value={dateFilter}
-            onChange={(e) => setDateFilter(e.target.value)}
-            onClick={(e) => e.target.showPicker && e.target.showPicker()}
-            className="w-full px-3.5 py-2.5 rounded-xl glass-input text-xs cursor-pointer"
-            title="Filter by action date"
+            onChange={setDateFilter}
+            placeholder="Filter Date..."
           />
         </div>
       </div>

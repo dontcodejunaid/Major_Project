@@ -9,6 +9,7 @@ import {
   Calendar, CheckCircle, Clock, Receipt, CreditCard, ChevronRight, RefreshCw
 } from 'lucide-react';
 import ReceiptView from '../components/ReceiptView';
+import CustomDatePicker from '../components/CustomDatePicker';
 
 const Dashboard = ({ user, navigateTo }) => {
   const [data, setData] = useState(null);
@@ -97,21 +98,11 @@ const Dashboard = ({ user, navigateTo }) => {
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Analysis Date:</span>
-            <input
-              type="date"
+            <CustomDatePicker
               value={dateFilter}
-              onChange={(e) => setDateFilter(e.target.value)}
-              onClick={(e) => e.target.showPicker && e.target.showPicker()}
-              className="px-3.5 py-2 rounded-xl glass-input text-xs font-semibold cursor-pointer"
+              onChange={setDateFilter}
+              placeholder="dd-mm-yyyy"
             />
-            {dateFilter && (
-              <button
-                onClick={() => setDateFilter('')}
-                className="px-2.5 py-2 bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white rounded-xl text-xs font-bold transition"
-              >
-                Reset
-              </button>
-            )}
           </div>
         </div>
 
@@ -486,22 +477,11 @@ const Dashboard = ({ user, navigateTo }) => {
             </select>
           </div>
           <div className="flex gap-1.5">
-            <input
-              type="date"
+            <CustomDatePicker
               value={dateFilter}
-              onChange={(e) => setDateFilter(e.target.value)}
-              onClick={(e) => e.target.showPicker && e.target.showPicker()}
-              className="w-full px-3 py-2 rounded-xl glass-input text-[11px] cursor-pointer"
-              title="Filter collections by Date"
+              onChange={setDateFilter}
+              placeholder="Filter Date..."
             />
-            {dateFilter && (
-              <button
-                onClick={() => setDateFilter('')}
-                className="px-2 py-2 bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white rounded-xl text-xs font-bold transition"
-              >
-                Reset
-              </button>
-            )}
           </div>
         </div>
 
