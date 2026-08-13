@@ -42,7 +42,11 @@
 }
 
 body {
-  background: radial-gradient(circle at top left, #121216 0%, #07070a 100%);
+  background-image: linear-gradient(to bottom, rgba(11, 12, 16, 0.84), rgba(7, 7, 10, 0.92)), url('/ghousia_campus.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: #f3f4f6;
   min-height: 100vh;
   font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
@@ -114,89 +118,250 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Light Mode Theme Overrides */
+body.light-theme {
+  background-image: linear-gradient(to bottom, rgba(241, 245, 249, 0.52), rgba(226, 232, 240, 0.62)), url('/ghousia_campus.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  color: #0f172a !important;
+}
+
+body.light-theme ::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.8);
+}
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.35);
+}
+body.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.6);
+}
+
+body.light-theme .glass-panel {
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border-color: rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07) !important;
+}
+
+body.light-theme .glass-card {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-color: rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.05) !important;
+}
+
+body.light-theme .glass-card:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(124, 58, 237, 0.5) !important;
+  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.15) !important;
+  transform: translateY(-2px);
+}
+
+body.light-theme .glass-input {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+body.light-theme .glass-input:focus {
+  border-color: #7c3aed !important;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15) !important;
+}
+
+body.light-theme input::placeholder,
+body.light-theme select::placeholder,
+body.light-theme textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+body.light-theme .text-white {
+  color: #0f172a !important;
+}
+
+body.light-theme .text-gray-400 {
+  color: #64748b !important;
+}
+
+body.light-theme .text-gray-300 {
+  color: #334155 !important;
+}
+
+body.light-theme .text-gray-500 {
+  color: #64748b !important;
+}
+
+body.light-theme [class*="bg-black/"] {
+  background-color: #ffffff !important;
+}
+
+body.light-theme [class*="bg-white/"] {
+  background-color: #f1f5f9 !important;
+}
+
+body.light-theme [class*="border-white/"],
+body.light-theme .border-gray-800,
+body.light-theme .border-gray-700 {
+  border-color: #e2e8f0 !important;
+}
+
+body.light-theme .glow-text {
+  text-shadow: none !important;
+  color: #0f172a !important;
+}
+
+body.light-theme ::-webkit-calendar-picker-indicator {
+  filter: invert(0);
+}
+
 .animate-fade-in {
   animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Print CSS system */
+/* Hide print area on screen */
+@media screen {
+  #print-area {
+    display: none !important;
+  }
+}
+
+/* Print CSS system - Fits 1 single A5 page sheet cleanly */
 @media print {
-  /* Hide the rest of the application */
-  body {
+  /* Hide all UI elements marked no-print and the main app root */
+  .no-print, #root {
+    display: none !important;
+  }
+
+  html, body {
     background: white !important;
     color: black !important;
-    font-size: 10px !important;
-  }
-  
-  body * {
-    visibility: hidden;
-  }
-
-  /* Only display the printable receipt container */
-  #print-area, #print-area * {
-    visibility: visible;
-  }
-
-  #print-area {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    margin: 0;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
     padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Display layout modes inside #print-area formatted to stretch across standard A5 sheet */
+  #print-area {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 202mm !important;
+    height: 202mm !important;
+    margin: 0 auto !important;
+    padding: 3mm 7mm !important;
+    box-sizing: border-box !important;
     background: white !important;
     color: black !important;
     box-shadow: none !important;
     border: none !important;
-    font-size: 10px !important;
-    line-height: 1.35 !important;
+    font-size: 8.5pt !important;
+    line-height: 1.25 !important;
+    overflow: visible !important;
+    visibility: visible !important;
   }
 
-  /* Shrink print paddings and margins to fit exactly one A4 page */
-  #print-area h1 {
-    font-size: 14px !important;
-    margin-bottom: 2px !important;
+  #print-area * {
+    visibility: visible !important;
+    overflow: visible !important;
   }
-  #print-area p, #print-area div {
-    margin-top: 2px !important;
-    margin-bottom: 2px !important;
-  }
+
   #print-area table {
+    display: table !important;
+    width: 100% !important;
     margin-top: 4px !important;
-    margin-bottom: 4px !important;
+    margin-bottom: 6px !important;
+    border-collapse: collapse !important;
+  }
+  #print-area tr {
+    display: table-row !important;
   }
   #print-area th, #print-area td {
-    padding: 4px 6px !important;
-    font-size: 9px !important;
+    display: table-cell !important;
+    padding: 3px 5px !important;
+    font-size: 8pt !important;
   }
-  #print-area .mt-12 {
-    margin-top: 12px !important;
+  #print-area .grid {
+    display: grid !important;
   }
-  #print-area .mb-4 {
-    margin-bottom: 6px !important;
-  }
-  #print-area .p-3 {
-    padding: 6px !important;
-  }
-  #print-area .p-8 {
-    padding: 5px !important;
-  }
-  #print-area .pb-2 {
-    padding-bottom: 4px !important;
+  #print-area .flex {
+    display: flex !important;
   }
 
-  /* Force background colors to print */
+  /* Header typography for A5 print */
+  #print-area h1 {
+    font-size: 13pt !important;
+    margin-bottom: 1px !important;
+    margin-top: 0 !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0.03em !important;
+    text-align: center !important;
+  }
+  #print-area h3 {
+    font-size: 9pt !important;
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+    text-align: center !important;
+  }
+  
+  /* Text and paragraph scaling for A5 print */
+  #print-area p, 
+  #print-area span, 
+  #print-area div {
+    font-size: 8pt !important;
+  }
+  
+  #print-area .text-\[7px\], 
+  #print-area .text-\[7\.5px\], 
+  #print-area .text-\[8px\], 
+  #print-area .text-\[8\.5px\], 
+  #print-area .text-\[9px\],
+  #print-area .text-\[10px\] {
+    font-size: 7.5pt !important;
+  }
+
+  /* QR code and signature scaling for A5 print */
+  #print-area svg {
+    width: 42px !important;
+    height: 42px !important;
+  }
+  
+  #print-area .mt-2, 
+  #print-area .mt-3, 
+  #print-area .mt-4 {
+    margin-top: 8px !important;
+  }
+  
+  #print-area .mb-1,
+  #print-area .mb-2 {
+    margin-bottom: 4px !important;
+  }
+  
+  #print-area .p-1 {
+    padding: 3px 6px !important;
+  }
+
+  /* Force background colors and borders to render in print/PDF */
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
 
-  /* Compact margins on printed page */
+  /* Setting @page size to A5 portrait and margin to 0 for standard A5 bill receipt sheet */
   @page {
-    size: A4 portrait;
-    margin: 0.8cm;
+    size: A5 portrait;
+    margin: 0;
   }
 
-  /* Prevent page breaks inside container */
+  /* Prevent page split across sheets */
   html, body, #print-area {
     page-break-after: avoid !important;
     page-break-before: avoid !important;

@@ -50,5 +50,18 @@
     "remarks": "partial payment",
     "createdAt": "2026-06-24T10:04:20.004Z",
     "updatedAt": "2026-06-24T10:04:20.004Z"
+  },
+  {
+    "_id": "539117a1-6a02-4ae1-adfa-93f1b72ad281",
+    "studentId": "bb9cbd20-ad71-406b-8fc9-226cd7d70919",
+    "amount": 5100,
+    "date": "2026-08-04T13:59:41.755Z",
+    "mode": "Online",
+    "referenceNo": "N/A",
+    "collectedBy": "Accounts Office Staff",
+    "receiptNo": "REC-000005",
+    "remarks": "",
+    "createdAt": "2026-08-04T13:59:41.759Z",
+    "updatedAt": "2026-08-04T13:59:41.759Z"
   }
 ]

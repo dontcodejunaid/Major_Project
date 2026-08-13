@@ -129,7 +129,7 @@ const seedDatabase = async () => {
     // 4. Create Mock Students & accounts
     const mockStudents = [
       {
-        usn: '1RV22CS001',
+        usn: '1GC22CS001',
         name: 'Rahul Sharma',
         branch: 'Computer Science',
         semester: '5th',
@@ -138,7 +138,7 @@ const seedDatabase = async () => {
         email: 'rahul@student.edu'
       },
       {
-        usn: '1RV22EC045',
+        usn: '1GC22EC045',
         name: 'Ananya Murthy',
         branch: 'Electronics & Communication',
         semester: '5th',
@@ -147,7 +147,7 @@ const seedDatabase = async () => {
         email: 'ananya@student.edu'
       },
       {
-        usn: '1RV22IS012',
+        usn: '1GC22IS012',
         name: 'Sameer Khan',
         branch: 'Information Science',
         semester: '5th',
@@ -177,7 +177,7 @@ const seedDatabase = async () => {
       });
 
       // 5. Seed some initial payments
-      if (studData.usn === '1RV22CS001') {
+      if (studData.usn === '1GC22CS001') {
         // Rahul paid half of KCET fee
         const payAmt = 30000;
         const receiptNo = 'REC-000001';
@@ -208,7 +208,7 @@ const seedDatabase = async () => {
           type: 'student',
           generatedAt: new Date().toISOString()
         });
-      } else if (studData.usn === '1RV22IS012') {
+      } else if (studData.usn === '1GC22IS012') {
         // Sameer paid SNQ fee in full
         const payAmt = 28500;
         const receiptNo = 'REC-000002';

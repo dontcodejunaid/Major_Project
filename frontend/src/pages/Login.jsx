@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { api } from '../utils/api';
-import { Lock, Mail, GraduationCap, ShieldAlert, Users, Loader2 } from 'lucide-react';
+import { Lock, Mail, GraduationCap, ShieldAlert, Users, Loader2, Eye, EyeOff } from 'lucide-react';
 
 const Login = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -41,7 +42,7 @@ const Login = ({ onLoginSuccess }) => {
       setPassword('staff123');
     } else if (role === 'student') {
       setEmail('rahul@student.edu');
-      setPassword('1rv22cs001'); // USN lowercase is student's default password
+      setPassword('1gc22cs001'); // USN lowercase is student's default password
     }
     setError('');
   };
@@ -54,21 +55,24 @@ const Login = ({ onLoginSuccess }) => {
 
       <div className="w-full max-w-md animate-fade-in">
         {/* App Title */}
-        <div className="text-center mb-8">
-          <div className="inline-flex p-3 bg-violet-500/10 border border-violet-500/20 rounded-2xl mb-4 shadow-inner">
-            <GraduationCap className="w-10 h-10 text-violet-400" />
+        <div className="text-center mb-6">
+          <div className="inline-flex p-1 bg-white rounded-full border-2 border-violet-500/40 mb-3 shadow-2xl">
+            <img src="/ghousia_logo.png" alt="Ghousia College Logo" className="w-16 h-16 object-contain rounded-full" />
           </div>
-          <h1 className="text-3xl font-extrabold text-white tracking-tight glow-text">
-            College FRMS
+          <h1 className="text-2xl font-black text-white tracking-wider uppercase glow-text">
+            GHOUSIA COLLEGE
           </h1>
-          <p className="text-gray-400 text-sm mt-1.5 font-medium">
-            Fee Receipt Management System
+          <h2 className="text-xs font-black text-emerald-400 uppercase tracking-widest mt-0.5">
+            OF ENGINEERING • RAMANAGARAM
+          </h2>
+          <p className="text-gray-400 text-xs mt-1.5 font-medium">
+            Fee Receipt & Accounts Management System
           </p>
         </div>
 
         {/* Login Card */}
         <div className="glass-panel rounded-3xl p-8 shadow-2xl relative overflow-hidden border-t border-white/[0.08]">
-          <h2 className="text-xl font-bold text-white mb-6">Account Login</h2>
+          <h2 className="text-xl font-bold text-white mb-6">Account Log In</h2>
 
           {error && (
             <div className="flex items-center gap-2.5 bg-red-500/10 border border-red-500/20 text-red-300 px-4 py-3 rounded-xl mb-5 text-sm">
@@ -101,19 +105,31 @@ const Login = ({ onLoginSuccess }) => {
               <div className="relative">
                 <Lock className="absolute left-3.5 top-3.5 w-5 h-5 text-gray-500" />
                 <input
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-11 pr-4 py-3 rounded-xl glass-input text-sm"
+                  className="w-full pl-11 pr-11 py-3 rounded-xl glass-input text-sm font-sans"
                   placeholder="••••••••"
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3.5 top-3.5 text-gray-400 hover:text-white transition cursor-pointer p-0.5"
+                  title={showPassword ? "Hide password" : "Show password"}
+                >
+                  {showPassword ? (
+                    <EyeOff className="w-5 h-5" />
+                  ) : (
+                    <Eye className="w-5 h-5" />
+                  )}
+                </button>
               </div>
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 bg-violet-600 hover:bg-violet-500 text-white rounded-xl text-sm font-bold transition glow-btn flex items-center justify-center gap-2"
+              className="w-full py-3.5 bg-violet-600 hover:bg-violet-500 text-white rounded-xl text-sm font-bold transition glow-btn flex items-center justify-center gap-2 shadow-lg shadow-violet-950/50"
             >
               {loading ? (
                 <>
@@ -136,21 +152,21 @@ const Login = ({ onLoginSuccess }) => {
               <button
                 type="button"
                 onClick={() => handleQuickLogin('admin')}
-                className="py-2.5 px-3 rounded-xl bg-violet-500/5 hover:bg-violet-500/10 border border-violet-500/10 hover:border-violet-500/20 text-violet-300 text-xs font-bold transition"
+                className="py-2.5 px-3 rounded-xl bg-violet-500/10 hover:bg-violet-500/20 border border-violet-500/20 text-violet-300 text-xs font-bold transition cursor-pointer"
               >
                 Admin Panel
               </button>
               <button
                 type="button"
                 onClick={() => handleQuickLogin('staff')}
-                className="py-2.5 px-3 rounded-xl bg-pink-500/5 hover:bg-pink-500/10 border border-pink-500/10 hover:border-pink-500/20 text-pink-300 text-xs font-bold transition"
+                className="py-2.5 px-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 text-emerald-300 text-xs font-bold transition cursor-pointer"
               >
                 Staff Portal
               </button>
               <button
                 type="button"
                 onClick={() => handleQuickLogin('student')}
-                className="py-2.5 px-3 rounded-xl bg-cyan-500/5 hover:bg-cyan-500/10 border border-cyan-500/10 hover:border-cyan-500/20 text-cyan-300 text-xs font-bold transition"
+                className="py-2.5 px-3 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/20 text-cyan-300 text-xs font-bold transition cursor-pointer"
               >
                 Student Hub
               </button>
@@ -160,7 +176,7 @@ const Login = ({ onLoginSuccess }) => {
 
         {/* Footer info */}
         <p className="text-center text-xs text-gray-500 mt-6">
-          © {new Date().getFullYear()} Nexus Institute. Secure TLS Cryptography Active.
+          © {new Date().getFullYear()} Ghousia College of Engineering, Ramanagaram. Managed by G.I.E.T., Bangalore.
         </p>
       </div>
     </div>

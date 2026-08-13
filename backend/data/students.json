@@ -1,29 +1,29 @@
 [
   {
     "_id": "bb9cbd20-ad71-406b-8fc9-226cd7d70919",
-    "usn": "1RV22CS001",
+    "usn": "1GC22CS001",
     "name": "Rahul Sharma",
     "branch": "Computer Science",
     "semester": "5th",
     "quota": "KCET",
     "batch": "2025-26",
-    "createdAt": "2026-06-24T08:52:35.631Z",
-    "updatedAt": "2026-06-24T09:28:05.702Z"
+    "createdAt": "2026-06-24T08:52:35.707Z",
+    "updatedAt": "2026-06-24T08:52:35.707Z"
   },
   {
     "_id": "0c32e6b3-8fe7-4f6e-8f39-40fc26c440d9",
-    "usn": "1RV22EC045",
+    "usn": "1GC22EC045",
     "name": "Ananya Murthy",
     "branch": "Electronics & Communication",
     "semester": "5th",
     "quota": "Management",
     "batch": "2025-26",
-    "createdAt": "2026-06-24T08:52:35.711Z",
-    "updatedAt": "2026-06-24T08:52:35.711Z"
+    "createdAt": "2026-06-24T08:52:35.789Z",
+    "updatedAt": "2026-06-24T08:52:35.789Z"
   },
   {
     "_id": "982e68cd-02d2-4e03-8315-28e47ab49030",
-    "usn": "1RV22IS012",
+    "usn": "1GC22IS012",
     "name": "Sameer Khan",
     "branch": "Information Science",
     "semester": "5th",

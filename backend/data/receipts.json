@@ -78,5 +78,25 @@
     "generatedAt": "2026-06-24T10:04:20.006Z",
     "createdAt": "2026-06-24T10:04:20.007Z",
     "updatedAt": "2026-06-24T10:04:20.007Z"
+  },
+  {
+    "_id": "aecb3d08-092c-4aac-9615-cce4d5941f84",
+    "receiptNo": "REC-000005",
+    "studentId": "bb9cbd20-ad71-406b-8fc9-226cd7d70919",
+    "paymentId": "539117a1-6a02-4ae1-adfa-93f1b72ad281",
+    "type": "staff",
+    "generatedAt": "2026-08-04T13:59:41.760Z",
+    "createdAt": "2026-08-04T13:59:41.761Z",
+    "updatedAt": "2026-08-04T13:59:41.761Z"
+  },
+  {
+    "_id": "6359540e-a5f7-4114-bcc4-99f5f61e61e6",
+    "receiptNo": "REC-000005",
+    "studentId": "bb9cbd20-ad71-406b-8fc9-226cd7d70919",
+    "paymentId": "539117a1-6a02-4ae1-adfa-93f1b72ad281",
+    "type": "student",
+    "generatedAt": "2026-08-04T13:59:41.762Z",
+    "createdAt": "2026-08-04T13:59:41.765Z",
+    "updatedAt": "2026-08-04T13:59:41.765Z"
   }
 ]

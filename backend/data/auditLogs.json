@@ -11,7 +11,7 @@
   {
     "_id": "ce205791-6bfd-4257-819b-a0d1a73fb578",
     "action": "COLLECT_FEE",
-    "details": "Collected ₹28240 via Online from student Rahul Sharma (1RV22CS001). Receipt No: REC-000003.",
+    "details": "Collected ₹28240 via Online from student Rahul Sharma (1GC22CS001). Receipt No: REC-000003.",
     "performedBy": "Accounts Office Staff",
     "timestamp": "2026-06-24T09:02:12.138Z",
     "createdAt": "2026-06-24T09:02:12.139Z",
@@ -20,7 +20,7 @@
   {
     "_id": "c57c6743-633e-4b62-8e7c-6e7c11ef842d",
     "action": "UPDATE_STUDENT",
-    "details": "Updated details for student Rahul Sharma (1RV22CS001).",
+    "details": "Updated details for student Rahul Sharma (1GC22CS001).",
     "performedBy": "System Admin",
     "timestamp": "2026-06-24T09:28:05.706Z",
     "createdAt": "2026-06-24T09:28:05.708Z",
@@ -38,7 +38,7 @@
   {
     "_id": "ced520f6-9505-4279-9a74-302f3385e064",
     "action": "COLLECT_FEE",
-    "details": "Collected ₹22000 via Cash from student Ananya Murthy (1RV22EC045). Receipt No: REC-000004.",
+    "details": "Collected ₹22000 via Cash from student Ananya Murthy (1GC22EC045). Receipt No: REC-000004.",
     "performedBy": "Accounts Office Staff",
     "timestamp": "2026-06-24T10:04:20.008Z",
     "createdAt": "2026-06-24T10:04:20.010Z",
@@ -61,5 +61,14 @@
     "timestamp": "2026-06-24T10:06:59.447Z",
     "createdAt": "2026-06-24T10:06:59.449Z",
     "updatedAt": "2026-06-24T10:06:59.449Z"
+  },
+  {
+    "_id": "eb53d908-9a8f-4a59-a425-77ae19eb64fa",
+    "action": "COLLECT_FEE",
+    "details": "Collected ₹5100 via Online from student Rahul Sharma (1GC22CS001). Receipt No: REC-000005.",
+    "performedBy": "Accounts Office Staff",
+    "timestamp": "2026-08-04T13:59:41.766Z",
+    "createdAt": "2026-08-04T13:59:41.768Z",
+    "updatedAt": "2026-08-04T13:59:41.768Z"
   }
 ]

@@ -556,19 +556,19 @@ const Dashboard = ({ user, navigateTo }) => {
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs border-collapse">
                   <thead>
-                    <tr className="border-b border-white/[0.05] text-gray-400">
-                      <th className="pb-3 font-semibold uppercase tracking-wider">USN</th>
-                      <th className="pb-3 font-semibold uppercase tracking-wider">Name</th>
-                      <th className="pb-3 font-semibold uppercase tracking-wider">Branch/Sem</th>
-                      <th className="pb-3 font-semibold uppercase tracking-wider">Quota</th>
-                      <th className="pb-3 font-semibold uppercase tracking-wider">Fee Payable</th>
-                      <th className="pb-3 font-semibold uppercase tracking-wider">Amount Paid</th>
-                      <th className="pb-3 font-semibold uppercase tracking-wider">Balance Due</th>
-                      <th className="pb-3 font-semibold uppercase tracking-wider">Status</th>
-                      <th className="pb-3 text-center font-semibold uppercase tracking-wider">Actions</th>
+                    <tr className="border-b border-white/[0.08] text-gray-400">
+                      <th className="pb-3 px-3 font-bold uppercase tracking-wider whitespace-nowrap">USN</th>
+                      <th className="pb-3 px-3 font-bold uppercase tracking-wider whitespace-nowrap">Name</th>
+                      <th className="pb-3 px-3 font-bold uppercase tracking-wider whitespace-nowrap">Branch/Sem</th>
+                      <th className="pb-3 px-3 font-bold uppercase tracking-wider whitespace-nowrap">Quota</th>
+                      <th className="pb-3 px-3 font-bold uppercase tracking-wider text-right whitespace-nowrap">Fee Payable</th>
+                      <th className="pb-3 px-3 font-bold uppercase tracking-wider text-right whitespace-nowrap">Amount Paid</th>
+                      <th className="pb-3 px-3 font-bold uppercase tracking-wider text-right whitespace-nowrap">Balance Due</th>
+                      <th className="pb-3 px-3 text-center font-bold uppercase tracking-wider whitespace-nowrap">Status</th>
+                      <th className="pb-3 px-3 text-center font-bold uppercase tracking-wider whitespace-nowrap">Actions</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className="divide-y divide-white/[0.04]">
                     {students.map((student) => {
                       const fees = student.fees || { totalFee: 0, amountPaid: 0, balanceDue: 0, netPayableNow: 0 };
                       
@@ -584,21 +584,21 @@ const Dashboard = ({ user, navigateTo }) => {
                       }
 
                       return (
-                        <tr key={student._id} className="border-b border-white/[0.03] hover:bg-white/[0.02] text-gray-300 font-medium">
-                          <td className="py-3.5 uppercase font-mono font-bold text-white">{student.usn}</td>
-                          <td className="py-3.5 text-white">{student.name}</td>
-                          <td className="py-3.5 text-gray-400">{student.branch} / {student.semester}</td>
-                          <td className="py-3.5 font-bold text-gray-400">{student.quota}</td>
-                          <td className="py-3.5 text-white">₹{fees.totalFee.toLocaleString('en-IN')}</td>
-                          <td className="py-3.5 text-green-400 font-bold">₹{fees.amountPaid.toLocaleString('en-IN')}</td>
-                          <td className="py-3.5 text-red-400 font-bold">₹{fees.balanceDue.toLocaleString('en-IN')}</td>
-                          <td className="py-3.5">
-                            <span className={`px-2.5 py-0.5 rounded text-[10px] font-bold ${statusColor}`}>
+                        <tr key={student._id} className="hover:bg-white/[0.03] text-gray-300 font-medium transition">
+                          <td className="py-3.5 px-3 uppercase font-mono font-bold text-white whitespace-nowrap">{student.usn}</td>
+                          <td className="py-3.5 px-3 text-white font-semibold whitespace-nowrap">{student.name}</td>
+                          <td className="py-3.5 px-3 text-gray-400 whitespace-nowrap">{student.branch} / {student.semester}</td>
+                          <td className="py-3.5 px-3 font-bold text-gray-400 whitespace-nowrap">{student.quota}</td>
+                          <td className="py-3.5 px-3 text-white text-right font-mono whitespace-nowrap">₹{(fees.totalFee || 0).toLocaleString('en-IN')}</td>
+                          <td className="py-3.5 px-3 text-green-400 font-bold text-right font-mono whitespace-nowrap">₹{(fees.amountPaid || 0).toLocaleString('en-IN')}</td>
+                          <td className="py-3.5 px-3 text-red-400 font-bold text-right font-mono whitespace-nowrap">₹{(fees.balanceDue || 0).toLocaleString('en-IN')}</td>
+                          <td className="py-3.5 px-3 text-center whitespace-nowrap">
+                            <span className={`inline-block px-2.5 py-1 rounded text-[10px] font-bold whitespace-nowrap ${statusColor}`}>
                               {status}
                             </span>
                           </td>
-                          <td className="py-3.5 text-center">
-                            <div className="flex items-center justify-center gap-2">
+                          <td className="py-3.5 px-3 text-center whitespace-nowrap">
+                            <div className="flex items-center justify-center gap-1.5 whitespace-nowrap">
                               {fees.amountPaid > 0 ? (
                                 <>
                                   <button
@@ -670,37 +670,37 @@ const Dashboard = ({ user, navigateTo }) => {
                 {filteredPayments.length > 0 ? (
                   <table className="w-full text-left text-xs border-collapse">
                     <thead>
-                      <tr className="border-b border-white/[0.05] text-gray-400">
-                        <th className="pb-3 font-semibold uppercase tracking-wider">Receipt No</th>
-                        <th className="pb-3 font-semibold uppercase tracking-wider">Student Name</th>
-                        <th className="pb-3 font-semibold uppercase tracking-wider">USN</th>
-                        <th className="pb-3 font-semibold uppercase tracking-wider">Payment Mode</th>
-                        <th className="pb-3 font-semibold uppercase tracking-wider">Collector</th>
-                        <th className="pb-3 font-semibold uppercase tracking-wider">Date</th>
-                        <th className="pb-3 text-right font-semibold uppercase tracking-wider">Amount</th>
-                        <th className="pb-3 text-center font-semibold uppercase tracking-wider">Bills Options</th>
+                      <tr className="border-b border-white/[0.08] text-gray-400">
+                        <th className="pb-3 px-3 font-bold uppercase tracking-wider whitespace-nowrap">Receipt No</th>
+                        <th className="pb-3 px-3 font-bold uppercase tracking-wider whitespace-nowrap">Student Name</th>
+                        <th className="pb-3 px-3 font-bold uppercase tracking-wider whitespace-nowrap">USN</th>
+                        <th className="pb-3 px-3 font-bold uppercase tracking-wider whitespace-nowrap">Payment Mode</th>
+                        <th className="pb-3 px-3 font-bold uppercase tracking-wider whitespace-nowrap">Collector</th>
+                        <th className="pb-3 px-3 font-bold uppercase tracking-wider whitespace-nowrap">Date</th>
+                        <th className="pb-3 px-3 text-right font-bold uppercase tracking-wider whitespace-nowrap">Amount</th>
+                        <th className="pb-3 px-3 text-center font-bold uppercase tracking-wider whitespace-nowrap">Bills Options</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="divide-y divide-white/[0.04]">
                       {filteredPayments.map((payment) => (
-                        <tr key={payment._id} className="border-b border-white/[0.03] hover:bg-white/[0.02] text-gray-300 font-medium">
-                          <td className="py-3.5 text-violet-400 font-bold">{payment.receiptNo}</td>
-                          <td className="py-3.5 text-white">{payment.studentName}</td>
-                          <td className="py-3.5 uppercase font-mono">{payment.studentUsn}</td>
-                          <td className="py-3.5">
-                            <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
-                              payment.mode === 'Online' ? 'bg-cyan-500/10 text-cyan-400' :
-                              payment.mode === 'Cash' ? 'bg-green-500/10 text-green-400' :
-                              'bg-yellow-500/10 text-yellow-400'
+                        <tr key={payment._id} className="hover:bg-white/[0.03] text-gray-300 font-medium transition">
+                          <td className="py-3.5 px-3 text-violet-400 font-bold whitespace-nowrap">{payment.receiptNo}</td>
+                          <td className="py-3.5 px-3 text-white font-semibold whitespace-nowrap">{payment.studentName}</td>
+                          <td className="py-3.5 px-3 uppercase font-mono text-gray-300 whitespace-nowrap">{payment.studentUsn}</td>
+                          <td className="py-3.5 px-3 whitespace-nowrap">
+                            <span className={`inline-block px-2.5 py-1 rounded text-[10px] font-bold whitespace-nowrap ${
+                              payment.mode === 'Online' ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20' :
+                              payment.mode === 'Cash' ? 'bg-green-500/10 text-green-400 border border-green-500/20' :
+                              'bg-yellow-500/10 text-yellow-400 border border-yellow-500/20'
                             }`}>
                               {payment.mode}
                             </span>
                           </td>
-                          <td className="py-3.5">{payment.collectedBy}</td>
-                          <td className="py-3.5">{new Date(payment.date).toLocaleDateString('en-IN')}</td>
-                          <td className="py-3.5 text-right font-bold text-white">₹{payment.amount.toLocaleString('en-IN')}</td>
-                          <td className="py-3.5 text-center">
-                            <div className="flex items-center justify-center gap-1.5">
+                          <td className="py-3.5 px-3 text-gray-300 whitespace-nowrap">{payment.collectedBy}</td>
+                          <td className="py-3.5 px-3 text-gray-400 whitespace-nowrap">{new Date(payment.date).toLocaleDateString('en-IN')}</td>
+                          <td className="py-3.5 px-3 text-right font-bold text-white font-mono whitespace-nowrap">₹{payment.amount.toLocaleString('en-IN')}</td>
+                          <td className="py-3.5 px-3 text-center whitespace-nowrap">
+                            <div className="flex items-center justify-center gap-1.5 whitespace-nowrap">
                               <button
                                 onClick={() => {
                                   setReceiptType('staff');

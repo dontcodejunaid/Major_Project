@@ -389,7 +389,7 @@ const Students = ({ user }) => {
                       value={formUsn}
                       onChange={(e) => setFormUsn(e.target.value)}
                       className="w-full pl-9 pr-3 py-2 rounded-xl glass-input text-xs uppercase font-mono disabled:opacity-50"
-                      placeholder="e.g. 1RV22CS001"
+                      placeholder="e.g. 1GC22CS001"
                     />
                   </div>
                 </div>

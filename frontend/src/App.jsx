@@ -10,13 +10,15 @@ import UsersPage from './pages/Users';
 
 import { 
   GraduationCap, LayoutDashboard, Users, Tag, Calendar, 
-  FileText, LogOut, User, ShieldCheck, CreditCard, UserPlus
+  FileText, LogOut, User, ShieldCheck, CreditCard, UserPlus,
+  Sun, Moon
 } from 'lucide-react';
 
 const App = () => {
   const [user, setUser] = useState(null);
   const [activePage, setActivePage] = useState('dashboard');
   const [pageParams, setPageParams] = useState(null);
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
 
   useEffect(() => {
     // Check if user is already logged in
@@ -26,6 +28,20 @@ const App = () => {
       setUser(JSON.parse(storedUser));
     }
   }, []);
+
+  useEffect(() => {
+    // Sync theme class with body element
+    if (theme === 'light') {
+      document.body.classList.add('light-theme');
+    } else {
+      document.body.classList.remove('light-theme');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
 
   const handleLoginSuccess = (loggedInUser) => {
     setUser(loggedInUser);
@@ -127,21 +143,22 @@ const App = () => {
   };
 
   return (
-    <div className="flex min-h-screen relative no-print">
+    <div className="flex min-h-screen relative">
       {/* Background radial overlays */}
-      <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-violet-600/5 rounded-full blur-[140px] pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-violet-600/5 rounded-full blur-[140px] pointer-events-none no-print"></div>
       
-      {/* Sidebar Navigation Panel */}
-      <aside className="w-64 glass-panel border-r border-white/[0.06] flex flex-col justify-between p-5 z-20 min-h-screen shrink-0 no-print">
+      {/* Sidebar Navigation Panel - Fixed Sticky Viewport */}
+      <aside className="w-64 glass-panel border-r border-white/[0.06] flex flex-col justify-between p-5 z-20 h-screen sticky top-0 shrink-0 no-print overflow-y-auto">
         <div className="space-y-8">
           {/* Logo Header */}
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-violet-500/10 border border-violet-500/20 rounded-xl text-violet-400">
-              <GraduationCap className="w-6 h-6" />
+            <div className="p-1 bg-white rounded-full border border-violet-500/30 shadow-lg shadow-violet-950/50 flex-shrink-0">
+              <img src="/ghousia_logo.png" alt="Ghousia College Logo" className="w-9 h-9 object-contain rounded-full" />
             </div>
             <div>
-              <h1 className="text-sm font-extrabold text-white leading-none tracking-wide">NEXUS COLLEGE</h1>
-              <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mt-1 block">Accounts Hub</span>
+              <h1 className="text-xs font-black text-white leading-tight tracking-wider uppercase">GHOUSIA COLLEGE</h1>
+              <span className="text-[9px] text-emerald-400 font-extrabold uppercase tracking-widest block">OF ENGINEERING</span>
+              <span className="text-[9px] text-gray-400 font-semibold tracking-wide mt-0.5 block">Accounts & Fee Hub</span>
             </div>
           </div>
 
@@ -193,7 +210,7 @@ const App = () => {
       </aside>
 
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col min-h-screen min-w-0 no-print">
+      <div className="flex-1 flex flex-col min-h-screen min-w-0">
         {/* Top Header Bar */}
         <header className="h-16 border-b border-white/[0.06] flex items-center justify-between px-8 z-10 no-print bg-black/10 backdrop-blur-md">
           <div className="flex items-center gap-2 text-xs font-bold text-gray-400">
@@ -202,13 +219,30 @@ const App = () => {
               <ShieldCheck className="w-3.5 h-3.5" /> TLS Secure Connection Active
             </span>
           </div>
-          <div className="text-xs font-bold text-gray-400">
-            Academic Term: <span className="text-white">2025-2026 Batch</span>
+          <div className="flex items-center gap-4 text-xs font-bold text-gray-400">
+            <button
+              onClick={toggleTheme}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-300 dark:border-white/10 bg-white/5 hover:bg-white/10 text-gray-700 dark:text-gray-300 transition cursor-pointer"
+              title="Toggle Light / Dark theme mode"
+            >
+              {theme === 'light' ? (
+                <>
+                  <Sun className="w-3.5 h-3.5 text-amber-500" />
+                  <span>Light Mode</span>
+                </>
+              ) : (
+                <>
+                  <Moon className="w-3.5 h-3.5 text-violet-400" />
+                  <span>Dark Mode</span>
+                </>
+              )}
+            </button>
+            <span>Academic Term: <span className="text-white">2026-2027 Batch</span></span>
           </div>
         </header>
 
         {/* Content Body */}
-        <main className="flex-1 p-8 overflow-y-auto no-print">
+        <main className="flex-1 p-8 overflow-y-auto">
           {renderActivePage()}
         </main>
       </div>
