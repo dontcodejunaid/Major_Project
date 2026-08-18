@@ -62,21 +62,81 @@ const seedDatabase = async () => {
 
     console.log('Seeded Admin & Staff users.');
 
-    // 2. Create Default Fee Structures
+    // 2. Create Default Fee Structures with all 28 Misc Particulars and 14 University particulars
+    const { MISC_FEE_HEADS, UNIV_FEE_HEADS, syncDayBookExcel } = require('./utils/excelSync');
+
+    const defaultMiscComponents = MISC_FEE_HEADS.map(name => ({ name, amount: 0 }));
+    
+    // KCET Misc Total = 440
+    const kcetMiscComponents = MISC_FEE_HEADS.map((name, i) => {
+      // Seed nominal breakdown for demonstration
+      if (name === 'College Admission Regn. Fee') return { name, amount: 100 };
+      if (name === 'Internal Examination Fee') return { name, amount: 100 };
+      if (name === 'College Sports Fee') return { name, amount: 100 };
+      if (name === 'Reading Room Fee') return { name, amount: 100 };
+      if (name === 'Teachers Day Flag') return { name, amount: 40 };
+      return { name, amount: 0 };
+    });
+    const kcetMiscTotal = kcetMiscComponents.reduce((s, c) => s + c.amount, 0);
+
+    // Management Misc Total = 15,750
+    const mgmtMiscComponents = MISC_FEE_HEADS.map((name, i) => {
+      if (name === 'College Admission Regn. Fee') return { name, amount: 2000 };
+      if (name === 'Admission Application Fee') return { name, amount: 1000 };
+      if (name === 'Internal Examination Fee') return { name, amount: 1000 };
+      if (name === 'College Maintenance Fee') return { name, amount: 2000 };
+      if (name === 'ERP Software fee') return { name, amount: 1000 };
+      if (name === 'College Sports Fee') return { name, amount: 1000 };
+      if (name === 'Department Association Fee') return { name, amount: 1000 };
+      if (name === 'Reading Room Fee') return { name, amount: 500 };
+      if (name === 'Medical Fee') return { name, amount: 500 };
+      if (name === 'Magazine Fee') return { name, amount: 500 };
+      if (name === 'Identity Card Fee') return { name, amount: 250 };
+      if (name === 'Library Fee') return { name, amount: 1000 };
+      if (name === 'College Day Fee') return { name, amount: 1000 };
+      if (name === 'Laboratory Equipment Maintenance Fee') return { name, amount: 1000 };
+      if (name === 'Computer Facilities Fee') return { name, amount: 1000 };
+      if (name === 'Internet Facility Fee') return { name, amount: 1000 };
+      return { name, amount: 0 };
+    });
+    const mgmtMiscTotal = mgmtMiscComponents.reduce((s, c) => s + c.amount, 0);
+
+    // SNQ Misc Total = 3,500
+    const snqMiscComponents = MISC_FEE_HEADS.map((name, i) => {
+      if (name === 'College Admission Regn. Fee') return { name, amount: 500 };
+      if (name === 'Internal Examination Fee') return { name, amount: 500 };
+      if (name === 'College Maintenance Fee') return { name, amount: 500 };
+      if (name === 'ERP Software fee') return { name, amount: 500 };
+      if (name === 'College Sports Fee') return { name, amount: 500 };
+      if (name === 'Reading Room Fee') return { name, amount: 500 };
+      if (name === 'Library Fee') return { name, amount: 500 };
+      return { name, amount: 0 };
+    });
+    const snqMiscTotal = snqMiscComponents.reduce((s, c) => s + c.amount, 0);
+
     const structures = [
       {
         academicYear: '2025-26',
         quota: 'KCET',
         components: [
           { name: 'Tuition Fee', amount: 48000 },
-          { name: 'University Fee', amount: 4000 },
-          { name: 'Sports Fee', amount: 1000 },
-          { name: 'Library Fee', amount: 1240 },
-          { name: 'Lab Fee', amount: 2000 },
-          { name: 'Development Fee', amount: 1000 },
-          { name: 'Exam Fee', amount: 500 },
-          { name: 'Miscellaneous', amount: 500 }
+          { name: 'University Registration Fee', amount: 3000 },
+          { name: 'Renewal of Registration Fee', amount: 0 },
+          { name: 'Eligibility Fee-(Karnataka Students)', amount: 1000 },
+          { name: 'E-Resource Consortium Fee', amount: 1500 },
+          { name: 'E-Learning Fee', amount: 1000 },
+          { name: 'University Sports fee', amount: 500 },
+          { name: 'University sports development fee', amount: 500 },
+          { name: 'University career guidance', amount: 250 },
+          { name: 'University students / teachers Devt.', amount: 250 },
+          { name: 'University development fund', amount: 1000 },
+          { name: 'University cultural activities fee', amount: 500 },
+          { name: 'Red Cross Membership Fee', amount: 100 },
+          { name: 'Women Cell Fee', amount: 100 },
+          { name: 'NSS Fee', amount: 100 },
+          { name: 'Total Miscelleneous Fee', amount: kcetMiscTotal }
         ],
+        miscBreakdown: kcetMiscComponents,
         totalAmount: 58240
       },
       {
@@ -84,14 +144,23 @@ const seedDatabase = async () => {
         quota: 'Management',
         components: [
           { name: 'Tuition Fee', amount: 180000 },
-          { name: 'University Fee', amount: 15000 },
-          { name: 'Sports Fee', amount: 5000 },
-          { name: 'Library Fee', amount: 4000 },
-          { name: 'Lab Fee', amount: 6000 },
-          { name: 'Development Fee', amount: 8000 },
-          { name: 'Exam Fee', amount: 1000 },
-          { name: 'Miscellaneous', amount: 1000 }
+          { name: 'University Registration Fee', amount: 5000 },
+          { name: 'Renewal of Registration Fee', amount: 0 },
+          { name: 'Eligibility Fee-(Karnataka Students)', amount: 2000 },
+          { name: 'E-Resource Consortium Fee', amount: 3000 },
+          { name: 'E-Learning Fee', amount: 2000 },
+          { name: 'University Sports fee', amount: 1500 },
+          { name: 'University sports development fee', amount: 1500 },
+          { name: 'University career guidance', amount: 1000 },
+          { name: 'University students / teachers Devt.', amount: 1000 },
+          { name: 'University development fund', amount: 5000 },
+          { name: 'University cultural activities fee', amount: 1500 },
+          { name: 'Red Cross Membership Fee', amount: 250 },
+          { name: 'Women Cell Fee', amount: 250 },
+          { name: 'NSS Fee', amount: 250 },
+          { name: 'Total Miscelleneous Fee', amount: mgmtMiscTotal }
         ],
+        miscBreakdown: mgmtMiscComponents,
         totalAmount: 220000
       },
       {
@@ -99,14 +168,23 @@ const seedDatabase = async () => {
         quota: 'SNQ',
         components: [
           { name: 'Tuition Fee', amount: 18000 },
-          { name: 'University Fee', amount: 4000 },
-          { name: 'Sports Fee', amount: 1000 },
-          { name: 'Library Fee', amount: 1500 },
-          { name: 'Lab Fee', amount: 2000 },
-          { name: 'Development Fee', amount: 1000 },
-          { name: 'Exam Fee', amount: 500 },
-          { name: 'Miscellaneous', amount: 500 }
+          { name: 'University Registration Fee', amount: 2000 },
+          { name: 'Renewal of Registration Fee', amount: 0 },
+          { name: 'Eligibility Fee-(Karnataka Students)', amount: 500 },
+          { name: 'E-Resource Consortium Fee', amount: 1000 },
+          { name: 'E-Learning Fee', amount: 800 },
+          { name: 'University Sports fee', amount: 400 },
+          { name: 'University sports development fee', amount: 400 },
+          { name: 'University career guidance', amount: 200 },
+          { name: 'University students / teachers Devt.', amount: 200 },
+          { name: 'University development fund', amount: 800 },
+          { name: 'University cultural activities fee', amount: 400 },
+          { name: 'Red Cross Membership Fee', amount: 100 },
+          { name: 'Women Cell Fee', amount: 100 },
+          { name: 'NSS Fee', amount: 100 },
+          { name: 'Total Miscelleneous Fee', amount: snqMiscTotal }
         ],
+        miscBreakdown: snqMiscComponents,
         totalAmount: 28500
       }
     ];

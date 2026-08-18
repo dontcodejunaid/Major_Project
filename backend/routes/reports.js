@@ -109,4 +109,52 @@ router.get('/audit-logs', authenticate, requireRole(['Admin']), async (req, res)
   }
 });
 
+// GET download DAY BOOK 2026-27 Excel file (Admin and Staff)
+router.get('/daybook/export', authenticate, requireRole(['Admin', 'Staff']), async (req, res) => {
+  try {
+    const { syncDayBookExcel, DAYBOOK_EXCEL_PATH } = require('../utils/excelSync');
+    const payments = await Payment.find();
+    const students = await Student.find();
+
+    const filePath = syncDayBookExcel(payments, students);
+    if (!filePath || !require('fs').existsSync(filePath)) {
+      return res.status(500).json({ message: 'Failed to generate Day Book Excel file' });
+    }
+
+    res.download(filePath, 'DAY_BOOK_2026-27.xlsx');
+  } catch (error) {
+    console.error('Day Book Excel export error:', error);
+    res.status(500).json({ message: 'Server error generating Excel file' });
+  }
+});
+
+// POST trigger manual Day Book Excel sync
+router.post('/daybook/sync', authenticate, requireRole(['Admin', 'Staff']), async (req, res) => {
+  try {
+    const { syncDayBookExcel, DAYBOOK_EXCEL_PATH } = require('../utils/excelSync');
+    const payments = await Payment.find();
+    const students = await Student.find();
+
+    syncDayBookExcel(payments, students);
+
+    // Audit Log
+    await AuditLog.create({
+      action: 'EXCEL_SYNC',
+      details: `Day Book Excel file synchronized (${payments.length} transactions recorded).`,
+      performedBy: req.user.name,
+      timestamp: new Date().toISOString()
+    });
+
+    res.json({
+      message: 'Day Book Excel synchronized successfully',
+      filePath: DAYBOOK_EXCEL_PATH,
+      totalTransactions: payments.length
+    });
+  } catch (error) {
+    console.error('Day Book Excel sync error:', error);
+    res.status(500).json({ message: 'Server error syncing Excel file' });
+  }
+});
+
 module.exports = router;
+

@@ -81,7 +81,7 @@ router.get('/receipt/:receiptNo', authenticate, async (req, res) => {
 
 // POST collect a payment (Staff and Admin)
 router.post('/', authenticate, requireRole(['Admin', 'Staff']), async (req, res) => {
-  const { studentId, amount, mode, referenceNo, remarks } = req.body;
+  const { studentId, amount, mode, referenceNo, remarks, breakdown } = req.body;
 
   if (!studentId || !amount || !mode) {
     return res.status(400).json({ message: 'Student, amount, and payment mode are required' });
@@ -101,7 +101,7 @@ router.post('/', authenticate, requireRole(['Admin', 'Staff']), async (req, res)
     const paymentsCount = await Payment.countDocuments();
     const receiptNo = `REC-${String(paymentsCount + 1).padStart(6, '0')}`;
 
-    // 1. Create Payment
+    // 1. Create Payment with head breakdown
     const payment = await Payment.create({
       studentId,
       amount: Number(amount),
@@ -110,7 +110,8 @@ router.post('/', authenticate, requireRole(['Admin', 'Staff']), async (req, res)
       referenceNo: referenceNo || 'N/A',
       collectedBy: req.user.name,
       receiptNo,
-      remarks: remarks || ''
+      remarks: remarks || '',
+      breakdown: breakdown || {}
     });
 
     // 2. Create Receipt records (both for audit)
@@ -138,8 +139,14 @@ router.post('/', authenticate, requireRole(['Admin', 'Staff']), async (req, res)
       timestamp: new Date().toISOString()
     });
 
+    // 4. Live Sync to Day Book Excel
+    const { syncDayBookExcel } = require('../utils/excelSync');
+    const allPayments = await Payment.find();
+    const allStudents = await Student.find();
+    syncDayBookExcel(allPayments, allStudents);
+
     res.status(201).json({
-      message: 'Payment recorded successfully',
+      message: 'Payment recorded successfully and synced to Day Book Excel',
       payment,
       student
     });
@@ -150,3 +157,4 @@ router.post('/', authenticate, requireRole(['Admin', 'Staff']), async (req, res)
 });
 
 module.exports = router;
+

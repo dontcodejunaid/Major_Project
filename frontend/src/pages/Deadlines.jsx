@@ -134,6 +134,7 @@ const Deadlines = ({ user }) => {
                       type="number"
                       required
                       value={finePerDay}
+                      onWheel={(e) => e.currentTarget.blur()}
                       onChange={(e) => setFinePerDay(e.target.value)}
                       className="w-full pl-9 pr-4 py-2.5 rounded-xl glass-input text-xs font-mono"
                       placeholder="e.g. 50"
