@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { api } from '../utils/api';
 import { Lock, Mail, GraduationCap, ShieldAlert, Users, Loader2, Eye, EyeOff } from 'lucide-react';
+import SkyToggle from '../components/SkyToggle';
 
-const Login = ({ onLoginSuccess }) => {
+const Login = ({ onLoginSuccess, theme, setTheme }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -49,6 +50,17 @@ const Login = ({ onLoginSuccess }) => {
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center px-4 relative">
+      {/* Top-right Day/Night Sky Theme Toggle */}
+      {setTheme && (
+        <div className="absolute top-6 right-6 z-20 flex items-center gap-2 bg-black/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+          <span className="text-[10px] uppercase font-bold text-gray-400">Theme</span>
+          <SkyToggle
+            checked={theme === 'dark'}
+            onChange={(isNight) => setTheme(isNight ? 'dark' : 'light')}
+          />
+        </div>
+      )}
+
       {/* Background glow highlights */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-600/10 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-fuchsia-600/10 rounded-full blur-[120px] pointer-events-none"></div>

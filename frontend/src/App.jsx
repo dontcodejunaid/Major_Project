@@ -21,7 +21,7 @@ const App = () => {
   const [user, setUser] = useState(null);
   const [activePage, setActivePage] = useState('dashboard');
   const [pageParams, setPageParams] = useState(null);
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -66,9 +66,9 @@ const App = () => {
     setMobileMenuOpen(false); // Close mobile drawer on navigation
   };
 
-  // If not logged in, render the login page
+  // If not logged in, render the login page with theme toggle
   if (!user) {
-    return <Login onLoginSuccess={handleLoginSuccess} />;
+    return <Login onLoginSuccess={handleLoginSuccess} theme={theme} setTheme={setTheme} />;
   }
 
   // Sidebar navigation configurations by Role
