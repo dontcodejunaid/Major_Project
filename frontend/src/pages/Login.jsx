@@ -52,8 +52,7 @@ const Login = ({ onLoginSuccess, theme, setTheme }) => {
     <div className="min-h-screen flex flex-col justify-center items-center px-4 relative">
       {/* Top-right Day/Night Sky Theme Toggle */}
       {setTheme && (
-        <div className="absolute top-6 right-6 z-20 flex items-center gap-2 bg-black/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
-          <span className="text-[10px] uppercase font-bold text-gray-400">Theme</span>
+        <div className="absolute top-6 right-6 z-20">
           <SkyToggle
             checked={theme === 'dark'}
             onChange={(isNight) => setTheme(isNight ? 'dark' : 'light')}
