@@ -49,83 +49,101 @@ class FirestoreModel {
   }
 
   async find(query = {}) {
-    const snapshot = await this.collection.get();
-    const results = [];
-    snapshot.forEach(doc => {
-      results.push({ _id: doc.id, ...doc.data() });
-    });
+    try {
+      const snapshot = await this.collection.get();
+      const results = [];
+      snapshot.forEach(doc => {
+        results.push({ _id: doc.id, ...doc.data() });
+      });
 
-    if (!query || Object.keys(query).length === 0) {
-      return results;
-    }
-
-    return results.filter(item => {
-      for (const key in query) {
-        if (query[key] === undefined) continue;
-
-        // Support OR conditions: { $or: [{ usn: /xxx/ }, { name: /xxx/ }] }
-        if (key === '$or' && Array.isArray(query.$or)) {
-          const matchedOr = query.$or.some(subQuery => {
-            return Object.keys(subQuery).every(subKey => {
-              const val = item[subKey] || '';
-              const target = subQuery[subKey];
-              if (target instanceof RegExp) {
-                return target.test(val);
-              }
-              if (typeof target === 'object' && target !== null && target.$regex) {
-                const regex = new RegExp(target.$regex, target.$options || 'i');
-                return regex.test(val);
-              }
-              return val === target;
-            });
-          });
-          if (!matchedOr) return false;
-          continue;
-        }
-
-        const val = item[key];
-        const target = query[key];
-
-        if (target instanceof RegExp) {
-          if (!target.test(val || '')) return false;
-        } else if (typeof target === 'object' && target !== null) {
-          if (target.$regex) {
-            const regex = new RegExp(target.$regex, target.$options || 'i');
-            if (!regex.test(val || '')) return false;
-          }
-          if (target.$ne !== undefined) {
-            if (val === target.$ne) return false;
-          }
-          if (target.$in !== undefined && Array.isArray(target.$in)) {
-            if (!target.$in.includes(val)) return false;
-          }
-          if (target.$gte !== undefined) {
-            if (!(val >= target.$gte)) return false;
-          }
-          if (target.$lte !== undefined) {
-            if (!(val <= target.$lte)) return false;
-          }
-        } else {
-          if (val !== target) return false;
-        }
+      if (!query || Object.keys(query).length === 0) {
+        return results;
       }
-      return true;
-    });
+
+      return results.filter(item => {
+        for (const key in query) {
+          if (query[key] === undefined) continue;
+
+          if (key === '$or' && Array.isArray(query.$or)) {
+            const matchedOr = query.$or.some(subQuery => {
+              return Object.keys(subQuery).every(subKey => {
+                const val = item[subKey] || '';
+                const target = subQuery[subKey];
+                if (target instanceof RegExp) {
+                  return target.test(val);
+                }
+                if (typeof target === 'object' && target !== null && target.$regex) {
+                  const regex = new RegExp(target.$regex, target.$options || 'i');
+                  return regex.test(val);
+                }
+                return val === target;
+              });
+            });
+            if (!matchedOr) return false;
+            continue;
+          }
+
+          const val = item[key];
+          const target = query[key];
+
+          if (target instanceof RegExp) {
+            if (!target.test(val || '')) return false;
+          } else if (typeof target === 'object' && target !== null) {
+            if (target.$regex) {
+              const regex = new RegExp(target.$regex, target.$options || 'i');
+              if (!regex.test(val || '')) return false;
+            }
+            if (target.$ne !== undefined) {
+              if (val === target.$ne) return false;
+            }
+            if (target.$in !== undefined && Array.isArray(target.$in)) {
+              if (!target.$in.includes(val)) return false;
+            }
+            if (target.$gte !== undefined) {
+              if (!(val >= target.$gte)) return false;
+            }
+            if (target.$lte !== undefined) {
+              if (!(val <= target.$lte)) return false;
+            }
+          } else {
+            if (val !== target) return false;
+          }
+        }
+        return true;
+      });
+    } catch (err) {
+      console.warn(`[FirestoreModel: ${this.collectionName}] Firestore error (${err.message}). Falling back to local data store.`);
+      const JsonModel = require('./jsonDb');
+      const local = new JsonModel(this.collectionName);
+      return local.find(query);
+    }
   }
 
   async findOne(query = {}) {
-    const list = await this.find(query);
-    return list.length > 0 ? list[0] : null;
+    try {
+      const list = await this.find(query);
+      return list.length > 0 ? list[0] : null;
+    } catch (err) {
+      const JsonModel = require('./jsonDb');
+      const local = new JsonModel(this.collectionName);
+      return local.findOne(query);
+    }
   }
 
   async findById(id) {
     if (!id) return null;
-    const docRef = this.collection.doc(String(id));
-    const doc = await docRef.get();
-    if (!doc.exists) {
-      return null;
+    try {
+      const docRef = this.collection.doc(String(id));
+      const doc = await docRef.get();
+      if (!doc.exists) {
+        return null;
+      }
+      return { _id: doc.id, ...doc.data() };
+    } catch (err) {
+      const JsonModel = require('./jsonDb');
+      const local = new JsonModel(this.collectionName);
+      return local.findById(id);
     }
-    return { _id: doc.id, ...doc.data() };
   }
 
   async create(data) {
@@ -136,16 +154,23 @@ class FirestoreModel {
       updatedAt: data.updatedAt || now
     };
 
-    let docRef;
-    if (data._id) {
-      const customId = String(data._id);
-      delete docData._id;
-      docRef = this.collection.doc(customId);
-      await docRef.set(docData);
-      return { _id: customId, ...docData };
-    } else {
-      docRef = await this.collection.add(docData);
-      return { _id: docRef.id, ...docData };
+    try {
+      let docRef;
+      if (data._id) {
+        const customId = String(data._id);
+        delete docData._id;
+        docRef = this.collection.doc(customId);
+        await docRef.set(docData);
+        return { _id: customId, ...docData };
+      } else {
+        docRef = await this.collection.add(docData);
+        return { _id: docRef.id, ...docData };
+      }
+    } catch (err) {
+      console.warn(`[FirestoreModel: ${this.collectionName}] Firestore write error. Falling back to local store.`);
+      const JsonModel = require('./jsonDb');
+      const local = new JsonModel(this.collectionName);
+      return local.create(data);
     }
   }
 
