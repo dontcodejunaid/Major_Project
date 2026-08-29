@@ -1,35 +1,134 @@
 [
   {
-    "_id": "bb9cbd20-ad71-406b-8fc9-226cd7d70919",
+    "_id": "48244ee7-4667-4285-b03a-340eafa1583f",
     "usn": "1GC22CS001",
     "name": "Rahul Sharma",
     "branch": "Computer Science",
     "semester": "5th",
     "quota": "KCET",
     "batch": "2025-26",
-    "createdAt": "2026-06-24T08:52:35.707Z",
-    "updatedAt": "2026-06-24T08:52:35.707Z"
+    "createdAt": "2026-08-29T06:10:29.729Z",
+    "updatedAt": "2026-08-29T06:10:29.729Z"
   },
   {
-    "_id": "0c32e6b3-8fe7-4f6e-8f39-40fc26c440d9",
+    "_id": "9423eaaf-6cbb-4d44-8c23-46953cbbac1e",
     "usn": "1GC22EC045",
     "name": "Ananya Murthy",
     "branch": "Electronics & Communication",
     "semester": "5th",
     "quota": "Management",
     "batch": "2025-26",
-    "createdAt": "2026-06-24T08:52:35.789Z",
-    "updatedAt": "2026-06-24T08:52:35.789Z"
+    "createdAt": "2026-08-29T06:10:29.883Z",
+    "updatedAt": "2026-08-29T06:10:29.883Z"
   },
   {
-    "_id": "982e68cd-02d2-4e03-8315-28e47ab49030",
+    "_id": "e0d87bdf-0370-4760-a65c-fb952877fdd9",
     "usn": "1GC22IS012",
     "name": "Sameer Khan",
     "branch": "Information Science",
     "semester": "5th",
     "quota": "SNQ",
     "batch": "2025-26",
-    "createdAt": "2026-06-24T08:52:35.792Z",
-    "updatedAt": "2026-06-24T08:52:35.792Z"
+    "createdAt": "2026-08-29T06:10:30.121Z",
+    "updatedAt": "2026-08-29T06:10:30.121Z"
+  },
+  {
+    "_id": "bdee3ed6-9c03-441e-b3b1-2cfdb3134e08",
+    "usn": "1GC22CS088",
+    "name": "Sneha Patel",
+    "branch": "Computer Science",
+    "semester": "5th",
+    "quota": "KCET",
+    "batch": "2025-26",
+    "createdAt": "2026-08-29T06:10:30.344Z",
+    "updatedAt": "2026-08-29T06:10:30.344Z"
+  },
+  {
+    "_id": "e0662c95-8157-4a64-9216-32ea07b25089",
+    "usn": "1GC22ME014",
+    "name": "Aditya Varma",
+    "branch": "Mechanical Engineering",
+    "semester": "5th",
+    "quota": "KCET",
+    "batch": "2025-26",
+    "createdAt": "2026-08-29T06:10:30.539Z",
+    "updatedAt": "2026-08-29T06:10:30.539Z"
+  },
+  {
+    "_id": "dfececad-0acd-44a1-af3a-bbf3bcd6350c",
+    "usn": "1GC22CV032",
+    "name": "Kavya Reddy",
+    "branch": "Civil Engineering",
+    "semester": "5th",
+    "quota": "Management",
+    "batch": "2025-26",
+    "createdAt": "2026-08-29T06:10:30.729Z",
+    "updatedAt": "2026-08-29T06:10:30.729Z"
+  },
+  {
+    "_id": "eecbb56e-a288-42cd-ba4f-2db7c6180062",
+    "usn": "1GC22AI005",
+    "name": "Vikram Joshi",
+    "branch": "Artificial Intelligence & DS",
+    "semester": "5th",
+    "quota": "KCET",
+    "batch": "2025-26",
+    "createdAt": "2026-08-29T06:10:30.938Z",
+    "updatedAt": "2026-08-29T06:10:30.938Z"
+  },
+  {
+    "_id": "23a55508-bd77-45fa-b037-d22381f7642c",
+    "usn": "1GC22IS049",
+    "name": "Zoya Fatima",
+    "branch": "Information Science",
+    "semester": "5th",
+    "quota": "SNQ",
+    "batch": "2025-26",
+    "createdAt": "2026-08-29T06:10:31.142Z",
+    "updatedAt": "2026-08-29T06:10:31.142Z"
+  },
+  {
+    "_id": "eff785d3-3329-4b34-bd19-1e0fd4ff319c",
+    "usn": "1GC23CS019",
+    "name": "Rohan Gupta",
+    "branch": "Computer Science",
+    "semester": "3rd",
+    "quota": "KCET",
+    "batch": "2025-26",
+    "createdAt": "2026-08-29T06:10:31.300Z",
+    "updatedAt": "2026-08-29T06:10:31.300Z"
+  },
+  {
+    "_id": "a6a2e2c8-d102-44b5-9288-1d4cff9a88f9",
+    "usn": "1GC23EC011",
+    "name": "Meera Nair",
+    "branch": "Electronics & Communication",
+    "semester": "3rd",
+    "quota": "Management",
+    "batch": "2025-26",
+    "createdAt": "2026-08-29T06:10:31.456Z",
+    "updatedAt": "2026-08-29T06:10:31.456Z"
+  },
+  {
+    "_id": "122a439b-0cbf-4a76-97e9-fa92f2ce9e62",
+    "usn": "1GC23AI022",
+    "name": "Arjun Deshmukh",
+    "branch": "Artificial Intelligence & DS",
+    "semester": "3rd",
+    "quota": "KCET",
+    "batch": "2025-26",
+    "createdAt": "2026-08-29T06:10:31.638Z",
+    "updatedAt": "2026-08-29T06:10:31.638Z"
+  },
+  {
+    "_id": "22c60041-1126-4926-baed-cdac8ae42c87",
+    "usn": "1GC21CS102",
+    "name": "Pooja Hegde",
+    "branch": "Computer Science",
+    "semester": "7th",
+    "quota": "Management",
+    "batch": "2025-26",
+    "createdAt": "2026-08-29T06:10:31.814Z",
+    "updatedAt": "2026-08-29T06:10:31.814Z"
   }
 ]

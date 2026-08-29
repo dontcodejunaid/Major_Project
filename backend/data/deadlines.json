@@ -1,10 +1,10 @@
 [
   {
-    "_id": "c546fd6b-72e9-4ab7-9ac4-5afe76c319a0",
+    "_id": "032d2373-ecd7-4231-8fd5-4e1de734b50f",
     "academicYear": "2025-26",
-    "dueDate": "2026-07-24",
+    "dueDate": "2026-09-23",
     "finePerDay": 50,
-    "createdAt": "2026-06-24T08:52:35.630Z",
-    "updatedAt": "2026-06-24T09:29:29.013Z"
+    "createdAt": "2026-08-29T06:10:29.727Z",
+    "updatedAt": "2026-08-29T06:10:29.727Z"
   }
 ]
