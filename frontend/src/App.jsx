@@ -7,12 +7,14 @@ import Payments from './pages/Payments';
 import Deadlines from './pages/Deadlines';
 import Reports from './pages/Reports';
 import UsersPage from './pages/Users';
+import AiAnalytics from './pages/AiAnalytics';
 import SkyToggle from './components/SkyToggle';
+import FloatingAiAssistant from './components/FloatingAiAssistant';
 
 import { 
   GraduationCap, LayoutDashboard, Users, Tag, Calendar, 
   FileText, LogOut, User, ShieldCheck, CreditCard, UserPlus,
-  Sun, Moon
+  Sun, Moon, Sparkles, Bot
 } from 'lucide-react';
 
 const App = () => {
@@ -88,6 +90,12 @@ const App = () => {
       roles: ['Staff', 'Admin']
     },
     {
+      name: 'AI Intelligence Hub',
+      icon: Bot,
+      page: 'ai-analytics',
+      roles: ['Admin', 'Staff']
+    },
+    {
       name: 'Fee Structures',
       icon: Tag,
       page: 'fees',
@@ -120,6 +128,8 @@ const App = () => {
     switch (activePage) {
       case 'dashboard':
         return <Dashboard user={user} navigateTo={navigateTo} />;
+      case 'ai-analytics':
+        return <AiAnalytics user={user} />;
       case 'students':
         return <Students user={user} />;
       case 'fees':
@@ -234,6 +244,11 @@ const App = () => {
           {renderActivePage()}
         </main>
       </div>
+
+      {/* Floating AI Assistant Copilot Button */}
+      {(user.role === 'Admin' || user.role === 'Staff') && (
+        <FloatingAiAssistant user={user} />
+      )}
 
       {/* Printing overlay trigger area */}
       <div className="print-only hidden">

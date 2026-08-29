@@ -21,6 +21,7 @@ app.use('/api/fees', require('./routes/fees'));
 app.use('/api/payments', require('./routes/payments'));
 app.use('/api/deadlines', require('./routes/deadlines'));
 app.use('/api/reports', require('./routes/reports'));
+app.use('/api/ai', require('./routes/ai'));
 
 // Basic health check route
 app.get('/api/health', (req, res) => {
