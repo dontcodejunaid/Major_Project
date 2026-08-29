@@ -622,3 +622,19 @@ input[type=number] {
   top: 50%;
   transform: translateY(-50%);
 }
+
+/* Mobile Responsiveness Enhancements */
+@media (max-width: 768px) {
+  .glass-panel {
+    padding: 1rem !important;
+  }
+  
+  table {
+    font-size: 0.75rem !important;
+  }
+
+  th, td {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
