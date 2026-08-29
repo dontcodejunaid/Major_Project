@@ -27,19 +27,58 @@ router.get('/analytics', authenticate, requireRole(['Admin']), async (req, res) 
       modeCollections[mode] = (modeCollections[mode] || 0) + amt;
     });
 
-    // Process students for fee-details and balance summary
+    const feeStructures = await require('../db').FeeStructure.find();
+    const deadlines = await require('../db').Deadline.find();
+
+    const feeMap = {};
+    feeStructures.forEach(fs => {
+      feeMap[`${fs.academicYear}_${fs.quota}`] = fs;
+    });
+
+    const deadlineMap = {};
+    deadlines.forEach(dl => {
+      deadlineMap[dl.academicYear] = dl;
+    });
+
+    const paymentsByStudent = {};
+    paymentsList.forEach(p => {
+      const sId = String(p.studentId);
+      if (!paymentsByStudent[sId]) paymentsByStudent[sId] = [];
+      paymentsByStudent[sId].push(p);
+    });
+
+    // Process students in-memory for instant response
     for (const student of studentsList) {
-      const details = await getStudentFeeDetails(student);
-      totalDues += details.balanceDue;
-      totalFines += details.fine;
+      const fs = feeMap[`${student.batch || '2025-26'}_${student.quota}`];
+      const totalFee = fs ? fs.totalAmount : 0;
+      const sPayments = paymentsByStudent[String(student._id)] || [];
+      const amountPaid = sPayments.reduce((sum, p) => sum + Number(p.amount), 0);
+      const balanceDueBeforeFine = Math.max(0, totalFee - amountPaid);
+      
+      let fine = 0;
+      if (balanceDueBeforeFine > 0) {
+        const dl = deadlineMap[student.batch || '2025-26'];
+        if (dl && dl.dueDate) {
+          const today = new Date();
+          const dueDate = new Date(dl.dueDate);
+          if (today > dueDate) {
+            const diffTime = Math.abs(today - dueDate);
+            const daysOverdue = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            fine = daysOverdue * (Number(dl.finePerDay) || 0);
+          }
+        }
+      }
+
+      totalDues += balanceDueBeforeFine;
+      totalFines += fine;
 
       // Group collections by branch
       const branch = student.branch || 'Other';
-      branchCollections[branch] = (branchCollections[branch] || 0) + details.amountPaid;
+      branchCollections[branch] = (branchCollections[branch] || 0) + amountPaid;
 
       // Group collections by quota
       const quota = student.quota || 'Other';
-      quotaCollections[quota] = (quotaCollections[quota] || 0) + details.amountPaid;
+      quotaCollections[quota] = (quotaCollections[quota] || 0) + amountPaid;
     }
 
     // Format splits for recharts
