@@ -562,5 +562,1133 @@
     "totalAmount": 28500,
     "createdAt": "2026-08-29T06:10:29.724Z",
     "updatedAt": "2026-08-29T06:10:29.724Z"
+  },
+  {
+    "_id": "05d077e1-c499-4ab8-abe8-5e86994fcc03",
+    "academicYear": "2025-26",
+    "quota": "KCET",
+    "components": [
+      {
+        "name": "Tuition Fee",
+        "amount": 48000
+      },
+      {
+        "name": "University Registration Fee",
+        "amount": 3000
+      },
+      {
+        "name": "Renewal of Registration Fee",
+        "amount": 0
+      },
+      {
+        "name": "Eligibility Fee-(Karnataka Students)",
+        "amount": 1000
+      },
+      {
+        "name": "E-Resource Consortium Fee",
+        "amount": 1500
+      },
+      {
+        "name": "E-Learning Fee",
+        "amount": 1000
+      },
+      {
+        "name": "University Sports fee",
+        "amount": 500
+      },
+      {
+        "name": "University sports development fee",
+        "amount": 500
+      },
+      {
+        "name": "University career guidance",
+        "amount": 250
+      },
+      {
+        "name": "University students / teachers Devt.",
+        "amount": 250
+      },
+      {
+        "name": "University development fund",
+        "amount": 1000
+      },
+      {
+        "name": "University cultural activities fee",
+        "amount": 500
+      },
+      {
+        "name": "Red Cross Membership Fee",
+        "amount": 100
+      },
+      {
+        "name": "Women Cell Fee",
+        "amount": 100
+      },
+      {
+        "name": "NSS Fee",
+        "amount": 100
+      },
+      {
+        "name": "Total Miscelleneous Fee",
+        "amount": 440
+      }
+    ],
+    "miscBreakdown": [
+      {
+        "name": "College Admission Regn. Fee",
+        "amount": 100
+      },
+      {
+        "name": "Admission Application Fee",
+        "amount": 0
+      },
+      {
+        "name": "Internal Examination Fee",
+        "amount": 100
+      },
+      {
+        "name": "College Maintenance Fee",
+        "amount": 0
+      },
+      {
+        "name": "ERP Software fee",
+        "amount": 0
+      },
+      {
+        "name": "College Sports Fee",
+        "amount": 100
+      },
+      {
+        "name": "Department Association Fee",
+        "amount": 0
+      },
+      {
+        "name": "Reading Room Fee",
+        "amount": 100
+      },
+      {
+        "name": "Medical Fee",
+        "amount": 0
+      },
+      {
+        "name": "Magazine Fee",
+        "amount": 0
+      },
+      {
+        "name": "Identity Card Fee",
+        "amount": 0
+      },
+      {
+        "name": "Library Fee",
+        "amount": 0
+      },
+      {
+        "name": "College Day Fee",
+        "amount": 0
+      },
+      {
+        "name": "Laboratory Equipment Maintenance Fee",
+        "amount": 0
+      },
+      {
+        "name": "Computer Facilities Fee",
+        "amount": 0
+      },
+      {
+        "name": "Internet Facility Fee",
+        "amount": 0
+      },
+      {
+        "name": "Students Group Insurance Fee",
+        "amount": 0
+      },
+      {
+        "name": "H.R. Fee",
+        "amount": 0
+      },
+      {
+        "name": "Innovation Centre Fee",
+        "amount": 0
+      },
+      {
+        "name": "Hand Book",
+        "amount": 0
+      },
+      {
+        "name": "Bank & University processing fee",
+        "amount": 0
+      },
+      {
+        "name": "Co-operative Society Shares",
+        "amount": 0
+      },
+      {
+        "name": "ISTE Students Chapter Fee",
+        "amount": 0
+      },
+      {
+        "name": "AICTE Activity Fee",
+        "amount": 0
+      },
+      {
+        "name": "Teachers Day Flag",
+        "amount": 40
+      },
+      {
+        "name": "Alumni Association Fee",
+        "amount": 0
+      },
+      {
+        "name": "Course Completion Certificate",
+        "amount": 0
+      },
+      {
+        "name": "Gruaduation Day Fee",
+        "amount": 0
+      }
+    ],
+    "totalAmount": 58240,
+    "createdAt": "2026-08-29T06:18:18.535Z",
+    "updatedAt": "2026-08-29T06:18:18.535Z"
+  },
+  {
+    "_id": "7c8e9802-c3c5-47ec-9425-5ba322a3c0b7",
+    "academicYear": "2025-26",
+    "quota": "Management",
+    "components": [
+      {
+        "name": "Tuition Fee",
+        "amount": 180000
+      },
+      {
+        "name": "University Registration Fee",
+        "amount": 5000
+      },
+      {
+        "name": "Renewal of Registration Fee",
+        "amount": 0
+      },
+      {
+        "name": "Eligibility Fee-(Karnataka Students)",
+        "amount": 2000
+      },
+      {
+        "name": "E-Resource Consortium Fee",
+        "amount": 3000
+      },
+      {
+        "name": "E-Learning Fee",
+        "amount": 2000
+      },
+      {
+        "name": "University Sports fee",
+        "amount": 1500
+      },
+      {
+        "name": "University sports development fee",
+        "amount": 1500
+      },
+      {
+        "name": "University career guidance",
+        "amount": 1000
+      },
+      {
+        "name": "University students / teachers Devt.",
+        "amount": 1000
+      },
+      {
+        "name": "University development fund",
+        "amount": 5000
+      },
+      {
+        "name": "University cultural activities fee",
+        "amount": 1500
+      },
+      {
+        "name": "Red Cross Membership Fee",
+        "amount": 250
+      },
+      {
+        "name": "Women Cell Fee",
+        "amount": 250
+      },
+      {
+        "name": "NSS Fee",
+        "amount": 250
+      },
+      {
+        "name": "Total Miscelleneous Fee",
+        "amount": 15750
+      }
+    ],
+    "miscBreakdown": [
+      {
+        "name": "College Admission Regn. Fee",
+        "amount": 2000
+      },
+      {
+        "name": "Admission Application Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Internal Examination Fee",
+        "amount": 1000
+      },
+      {
+        "name": "College Maintenance Fee",
+        "amount": 2000
+      },
+      {
+        "name": "ERP Software fee",
+        "amount": 1000
+      },
+      {
+        "name": "College Sports Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Department Association Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Reading Room Fee",
+        "amount": 500
+      },
+      {
+        "name": "Medical Fee",
+        "amount": 500
+      },
+      {
+        "name": "Magazine Fee",
+        "amount": 500
+      },
+      {
+        "name": "Identity Card Fee",
+        "amount": 250
+      },
+      {
+        "name": "Library Fee",
+        "amount": 1000
+      },
+      {
+        "name": "College Day Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Laboratory Equipment Maintenance Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Computer Facilities Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Internet Facility Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Students Group Insurance Fee",
+        "amount": 0
+      },
+      {
+        "name": "H.R. Fee",
+        "amount": 0
+      },
+      {
+        "name": "Innovation Centre Fee",
+        "amount": 0
+      },
+      {
+        "name": "Hand Book",
+        "amount": 0
+      },
+      {
+        "name": "Bank & University processing fee",
+        "amount": 0
+      },
+      {
+        "name": "Co-operative Society Shares",
+        "amount": 0
+      },
+      {
+        "name": "ISTE Students Chapter Fee",
+        "amount": 0
+      },
+      {
+        "name": "AICTE Activity Fee",
+        "amount": 0
+      },
+      {
+        "name": "Teachers Day Flag",
+        "amount": 0
+      },
+      {
+        "name": "Alumni Association Fee",
+        "amount": 0
+      },
+      {
+        "name": "Course Completion Certificate",
+        "amount": 0
+      },
+      {
+        "name": "Gruaduation Day Fee",
+        "amount": 0
+      }
+    ],
+    "totalAmount": 220000,
+    "createdAt": "2026-08-29T06:18:18.539Z",
+    "updatedAt": "2026-08-29T06:18:18.539Z"
+  },
+  {
+    "_id": "a257ee06-01e7-41b1-81d4-b2fdb7b1112d",
+    "academicYear": "2025-26",
+    "quota": "SNQ",
+    "components": [
+      {
+        "name": "Tuition Fee",
+        "amount": 18000
+      },
+      {
+        "name": "University Registration Fee",
+        "amount": 2000
+      },
+      {
+        "name": "Renewal of Registration Fee",
+        "amount": 0
+      },
+      {
+        "name": "Eligibility Fee-(Karnataka Students)",
+        "amount": 500
+      },
+      {
+        "name": "E-Resource Consortium Fee",
+        "amount": 1000
+      },
+      {
+        "name": "E-Learning Fee",
+        "amount": 800
+      },
+      {
+        "name": "University Sports fee",
+        "amount": 400
+      },
+      {
+        "name": "University sports development fee",
+        "amount": 400
+      },
+      {
+        "name": "University career guidance",
+        "amount": 200
+      },
+      {
+        "name": "University students / teachers Devt.",
+        "amount": 200
+      },
+      {
+        "name": "University development fund",
+        "amount": 800
+      },
+      {
+        "name": "University cultural activities fee",
+        "amount": 400
+      },
+      {
+        "name": "Red Cross Membership Fee",
+        "amount": 100
+      },
+      {
+        "name": "Women Cell Fee",
+        "amount": 100
+      },
+      {
+        "name": "NSS Fee",
+        "amount": 100
+      },
+      {
+        "name": "Total Miscelleneous Fee",
+        "amount": 3500
+      }
+    ],
+    "miscBreakdown": [
+      {
+        "name": "College Admission Regn. Fee",
+        "amount": 500
+      },
+      {
+        "name": "Admission Application Fee",
+        "amount": 0
+      },
+      {
+        "name": "Internal Examination Fee",
+        "amount": 500
+      },
+      {
+        "name": "College Maintenance Fee",
+        "amount": 500
+      },
+      {
+        "name": "ERP Software fee",
+        "amount": 500
+      },
+      {
+        "name": "College Sports Fee",
+        "amount": 500
+      },
+      {
+        "name": "Department Association Fee",
+        "amount": 0
+      },
+      {
+        "name": "Reading Room Fee",
+        "amount": 500
+      },
+      {
+        "name": "Medical Fee",
+        "amount": 0
+      },
+      {
+        "name": "Magazine Fee",
+        "amount": 0
+      },
+      {
+        "name": "Identity Card Fee",
+        "amount": 0
+      },
+      {
+        "name": "Library Fee",
+        "amount": 500
+      },
+      {
+        "name": "College Day Fee",
+        "amount": 0
+      },
+      {
+        "name": "Laboratory Equipment Maintenance Fee",
+        "amount": 0
+      },
+      {
+        "name": "Computer Facilities Fee",
+        "amount": 0
+      },
+      {
+        "name": "Internet Facility Fee",
+        "amount": 0
+      },
+      {
+        "name": "Students Group Insurance Fee",
+        "amount": 0
+      },
+      {
+        "name": "H.R. Fee",
+        "amount": 0
+      },
+      {
+        "name": "Innovation Centre Fee",
+        "amount": 0
+      },
+      {
+        "name": "Hand Book",
+        "amount": 0
+      },
+      {
+        "name": "Bank & University processing fee",
+        "amount": 0
+      },
+      {
+        "name": "Co-operative Society Shares",
+        "amount": 0
+      },
+      {
+        "name": "ISTE Students Chapter Fee",
+        "amount": 0
+      },
+      {
+        "name": "AICTE Activity Fee",
+        "amount": 0
+      },
+      {
+        "name": "Teachers Day Flag",
+        "amount": 0
+      },
+      {
+        "name": "Alumni Association Fee",
+        "amount": 0
+      },
+      {
+        "name": "Course Completion Certificate",
+        "amount": 0
+      },
+      {
+        "name": "Gruaduation Day Fee",
+        "amount": 0
+      }
+    ],
+    "totalAmount": 28500,
+    "createdAt": "2026-08-29T06:18:18.543Z",
+    "updatedAt": "2026-08-29T06:18:18.543Z"
+  },
+  {
+    "_id": "55205e5f-8e29-406c-b16f-95901b1fce60",
+    "academicYear": "2025-26",
+    "quota": "KCET",
+    "components": [
+      {
+        "name": "Tuition Fee",
+        "amount": 48000
+      },
+      {
+        "name": "University Registration Fee",
+        "amount": 3000
+      },
+      {
+        "name": "Renewal of Registration Fee",
+        "amount": 0
+      },
+      {
+        "name": "Eligibility Fee-(Karnataka Students)",
+        "amount": 1000
+      },
+      {
+        "name": "E-Resource Consortium Fee",
+        "amount": 1500
+      },
+      {
+        "name": "E-Learning Fee",
+        "amount": 1000
+      },
+      {
+        "name": "University Sports fee",
+        "amount": 500
+      },
+      {
+        "name": "University sports development fee",
+        "amount": 500
+      },
+      {
+        "name": "University career guidance",
+        "amount": 250
+      },
+      {
+        "name": "University students / teachers Devt.",
+        "amount": 250
+      },
+      {
+        "name": "University development fund",
+        "amount": 1000
+      },
+      {
+        "name": "University cultural activities fee",
+        "amount": 500
+      },
+      {
+        "name": "Red Cross Membership Fee",
+        "amount": 100
+      },
+      {
+        "name": "Women Cell Fee",
+        "amount": 100
+      },
+      {
+        "name": "NSS Fee",
+        "amount": 100
+      },
+      {
+        "name": "Total Miscelleneous Fee",
+        "amount": 440
+      }
+    ],
+    "miscBreakdown": [
+      {
+        "name": "College Admission Regn. Fee",
+        "amount": 100
+      },
+      {
+        "name": "Admission Application Fee",
+        "amount": 0
+      },
+      {
+        "name": "Internal Examination Fee",
+        "amount": 100
+      },
+      {
+        "name": "College Maintenance Fee",
+        "amount": 0
+      },
+      {
+        "name": "ERP Software fee",
+        "amount": 0
+      },
+      {
+        "name": "College Sports Fee",
+        "amount": 100
+      },
+      {
+        "name": "Department Association Fee",
+        "amount": 0
+      },
+      {
+        "name": "Reading Room Fee",
+        "amount": 100
+      },
+      {
+        "name": "Medical Fee",
+        "amount": 0
+      },
+      {
+        "name": "Magazine Fee",
+        "amount": 0
+      },
+      {
+        "name": "Identity Card Fee",
+        "amount": 0
+      },
+      {
+        "name": "Library Fee",
+        "amount": 0
+      },
+      {
+        "name": "College Day Fee",
+        "amount": 0
+      },
+      {
+        "name": "Laboratory Equipment Maintenance Fee",
+        "amount": 0
+      },
+      {
+        "name": "Computer Facilities Fee",
+        "amount": 0
+      },
+      {
+        "name": "Internet Facility Fee",
+        "amount": 0
+      },
+      {
+        "name": "Students Group Insurance Fee",
+        "amount": 0
+      },
+      {
+        "name": "H.R. Fee",
+        "amount": 0
+      },
+      {
+        "name": "Innovation Centre Fee",
+        "amount": 0
+      },
+      {
+        "name": "Hand Book",
+        "amount": 0
+      },
+      {
+        "name": "Bank & University processing fee",
+        "amount": 0
+      },
+      {
+        "name": "Co-operative Society Shares",
+        "amount": 0
+      },
+      {
+        "name": "ISTE Students Chapter Fee",
+        "amount": 0
+      },
+      {
+        "name": "AICTE Activity Fee",
+        "amount": 0
+      },
+      {
+        "name": "Teachers Day Flag",
+        "amount": 40
+      },
+      {
+        "name": "Alumni Association Fee",
+        "amount": 0
+      },
+      {
+        "name": "Course Completion Certificate",
+        "amount": 0
+      },
+      {
+        "name": "Gruaduation Day Fee",
+        "amount": 0
+      }
+    ],
+    "totalAmount": 58240,
+    "createdAt": "2026-08-29T06:18:36.880Z",
+    "updatedAt": "2026-08-29T06:18:36.880Z"
+  },
+  {
+    "_id": "5fa4dd8c-0880-4642-8bad-9d549b5348b9",
+    "academicYear": "2025-26",
+    "quota": "Management",
+    "components": [
+      {
+        "name": "Tuition Fee",
+        "amount": 180000
+      },
+      {
+        "name": "University Registration Fee",
+        "amount": 5000
+      },
+      {
+        "name": "Renewal of Registration Fee",
+        "amount": 0
+      },
+      {
+        "name": "Eligibility Fee-(Karnataka Students)",
+        "amount": 2000
+      },
+      {
+        "name": "E-Resource Consortium Fee",
+        "amount": 3000
+      },
+      {
+        "name": "E-Learning Fee",
+        "amount": 2000
+      },
+      {
+        "name": "University Sports fee",
+        "amount": 1500
+      },
+      {
+        "name": "University sports development fee",
+        "amount": 1500
+      },
+      {
+        "name": "University career guidance",
+        "amount": 1000
+      },
+      {
+        "name": "University students / teachers Devt.",
+        "amount": 1000
+      },
+      {
+        "name": "University development fund",
+        "amount": 5000
+      },
+      {
+        "name": "University cultural activities fee",
+        "amount": 1500
+      },
+      {
+        "name": "Red Cross Membership Fee",
+        "amount": 250
+      },
+      {
+        "name": "Women Cell Fee",
+        "amount": 250
+      },
+      {
+        "name": "NSS Fee",
+        "amount": 250
+      },
+      {
+        "name": "Total Miscelleneous Fee",
+        "amount": 15750
+      }
+    ],
+    "miscBreakdown": [
+      {
+        "name": "College Admission Regn. Fee",
+        "amount": 2000
+      },
+      {
+        "name": "Admission Application Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Internal Examination Fee",
+        "amount": 1000
+      },
+      {
+        "name": "College Maintenance Fee",
+        "amount": 2000
+      },
+      {
+        "name": "ERP Software fee",
+        "amount": 1000
+      },
+      {
+        "name": "College Sports Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Department Association Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Reading Room Fee",
+        "amount": 500
+      },
+      {
+        "name": "Medical Fee",
+        "amount": 500
+      },
+      {
+        "name": "Magazine Fee",
+        "amount": 500
+      },
+      {
+        "name": "Identity Card Fee",
+        "amount": 250
+      },
+      {
+        "name": "Library Fee",
+        "amount": 1000
+      },
+      {
+        "name": "College Day Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Laboratory Equipment Maintenance Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Computer Facilities Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Internet Facility Fee",
+        "amount": 1000
+      },
+      {
+        "name": "Students Group Insurance Fee",
+        "amount": 0
+      },
+      {
+        "name": "H.R. Fee",
+        "amount": 0
+      },
+      {
+        "name": "Innovation Centre Fee",
+        "amount": 0
+      },
+      {
+        "name": "Hand Book",
+        "amount": 0
+      },
+      {
+        "name": "Bank & University processing fee",
+        "amount": 0
+      },
+      {
+        "name": "Co-operative Society Shares",
+        "amount": 0
+      },
+      {
+        "name": "ISTE Students Chapter Fee",
+        "amount": 0
+      },
+      {
+        "name": "AICTE Activity Fee",
+        "amount": 0
+      },
+      {
+        "name": "Teachers Day Flag",
+        "amount": 0
+      },
+      {
+        "name": "Alumni Association Fee",
+        "amount": 0
+      },
+      {
+        "name": "Course Completion Certificate",
+        "amount": 0
+      },
+      {
+        "name": "Gruaduation Day Fee",
+        "amount": 0
+      }
+    ],
+    "totalAmount": 220000,
+    "createdAt": "2026-08-29T06:18:36.883Z",
+    "updatedAt": "2026-08-29T06:18:36.883Z"
+  },
+  {
+    "_id": "70f75f2a-4914-42c2-93be-975ba9647ebe",
+    "academicYear": "2025-26",
+    "quota": "SNQ",
+    "components": [
+      {
+        "name": "Tuition Fee",
+        "amount": 18000
+      },
+      {
+        "name": "University Registration Fee",
+        "amount": 2000
+      },
+      {
+        "name": "Renewal of Registration Fee",
+        "amount": 0
+      },
+      {
+        "name": "Eligibility Fee-(Karnataka Students)",
+        "amount": 500
+      },
+      {
+        "name": "E-Resource Consortium Fee",
+        "amount": 1000
+      },
+      {
+        "name": "E-Learning Fee",
+        "amount": 800
+      },
+      {
+        "name": "University Sports fee",
+        "amount": 400
+      },
+      {
+        "name": "University sports development fee",
+        "amount": 400
+      },
+      {
+        "name": "University career guidance",
+        "amount": 200
+      },
+      {
+        "name": "University students / teachers Devt.",
+        "amount": 200
+      },
+      {
+        "name": "University development fund",
+        "amount": 800
+      },
+      {
+        "name": "University cultural activities fee",
+        "amount": 400
+      },
+      {
+        "name": "Red Cross Membership Fee",
+        "amount": 100
+      },
+      {
+        "name": "Women Cell Fee",
+        "amount": 100
+      },
+      {
+        "name": "NSS Fee",
+        "amount": 100
+      },
+      {
+        "name": "Total Miscelleneous Fee",
+        "amount": 3500
+      }
+    ],
+    "miscBreakdown": [
+      {
+        "name": "College Admission Regn. Fee",
+        "amount": 500
+      },
+      {
+        "name": "Admission Application Fee",
+        "amount": 0
+      },
+      {
+        "name": "Internal Examination Fee",
+        "amount": 500
+      },
+      {
+        "name": "College Maintenance Fee",
+        "amount": 500
+      },
+      {
+        "name": "ERP Software fee",
+        "amount": 500
+      },
+      {
+        "name": "College Sports Fee",
+        "amount": 500
+      },
+      {
+        "name": "Department Association Fee",
+        "amount": 0
+      },
+      {
+        "name": "Reading Room Fee",
+        "amount": 500
+      },
+      {
+        "name": "Medical Fee",
+        "amount": 0
+      },
+      {
+        "name": "Magazine Fee",
+        "amount": 0
+      },
+      {
+        "name": "Identity Card Fee",
+        "amount": 0
+      },
+      {
+        "name": "Library Fee",
+        "amount": 500
+      },
+      {
+        "name": "College Day Fee",
+        "amount": 0
+      },
+      {
+        "name": "Laboratory Equipment Maintenance Fee",
+        "amount": 0
+      },
+      {
+        "name": "Computer Facilities Fee",
+        "amount": 0
+      },
+      {
+        "name": "Internet Facility Fee",
+        "amount": 0
+      },
+      {
+        "name": "Students Group Insurance Fee",
+        "amount": 0
+      },
+      {
+        "name": "H.R. Fee",
+        "amount": 0
+      },
+      {
+        "name": "Innovation Centre Fee",
+        "amount": 0
+      },
+      {
+        "name": "Hand Book",
+        "amount": 0
+      },
+      {
+        "name": "Bank & University processing fee",
+        "amount": 0
+      },
+      {
+        "name": "Co-operative Society Shares",
+        "amount": 0
+      },
+      {
+        "name": "ISTE Students Chapter Fee",
+        "amount": 0
+      },
+      {
+        "name": "AICTE Activity Fee",
+        "amount": 0
+      },
+      {
+        "name": "Teachers Day Flag",
+        "amount": 0
+      },
+      {
+        "name": "Alumni Association Fee",
+        "amount": 0
+      },
+      {
+        "name": "Course Completion Certificate",
+        "amount": 0
+      },
+      {
+        "name": "Gruaduation Day Fee",
+        "amount": 0
+      }
+    ],
+    "totalAmount": 28500,
+    "createdAt": "2026-08-29T06:18:36.886Z",
+    "updatedAt": "2026-08-29T06:18:36.886Z"
   }
 ]
